@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ManoTensão</string>
+    <string name="mano">ManoTensão</string>
+    <string name="precisando">Precisando de uma mão?</string>
+    <string name="ajuda">A gente te ajuda!</string>
+    <string name="seta">➔</string>
+    <string name="title_activity_login">Login</string>
+    <string name="bem_vindo">BEM VINDO DE VOLTA!</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="email_input">seuemail@email.com</string>
+    <string name="senha_input">**********</string>
+    <string name="esqueci_senha">Esqueci minha senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="nao_tenho_cadastro">Não tenho cadastro</string>
+    <string name="ou">OU</string>
+    <string name="google">Sign in with Google</string>
+    <string name="devemos">Como devemos seguir?</string>
+    <string name="contratar">Quero contratar um prestador</string>
+    <string name="busca">Estou em busca de profissionais para realizar serviços em minha residência</string>
+    <string name="prestador">Sou prestador de\nserviços</string>
+    <string name="profissional">Sou um profissional e desejo divulgar meus serviços e encontrar novos clientes</string>
+    <string name="tenho_cadastro">Já tenho cadastro</string>
+    <string name="quero_contratar">Quero contratar</string>
+    <string name="foto_perfil">Foto de perfil</string>
+    <string name="pessoais">Informações pessoais</string>
+    <string name="contato">Contato</string>
+    <string name="endereco">Endereço</string>
+</resources>
