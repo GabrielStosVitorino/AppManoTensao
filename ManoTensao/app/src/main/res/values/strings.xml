@@ -26,4 +26,23 @@
     <string name="pessoais">Informações pessoais</string>
     <string name="contato">Contato</string>
     <string name="endereco">Endereço</string>
+    <string name="continuar">Continuar</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="cpf">CPF</string>
+    <string name="data_nascimeto">Data de nascimento</string>
+    <string name="crie_senha">Crie uma senha</string>
+    <string name="telefone">Telefone</string>
+    <string name="cep">CEP</string>
+    <string name="bairro">Bairro</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="numero">Número</string>
+    <string name="complemento">Complemento</string>
+    <string name="que_bom">Que bom te ter com a gente!</string>
+    <string name="agora_voce">Agora você faz parte da ManoTensao!</string>
+    <string name="sou_prestador">Sou prestador</string>
+    <string name="sobre_mim">Sobre mim</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="escreva_mais">Escreva mais sobre você!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

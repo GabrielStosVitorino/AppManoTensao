@@ -32,12 +32,13 @@
             android:layout_marginTop="100dp"
             android:layout_marginLeft="13dp"
             />
-        
+
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="135dp"
             android:layout_height="30dp"
             android:background="@drawable/custom_button_perfil"
             android:id="@+id/btn_perfil"
+            android:fontFamily="@font/montserrat"
             android:text="@string/foto_perfil"
             android:textSize="15sp"
             android:layout_below="@id/tv_contratar"
@@ -50,20 +51,68 @@
             android:layout_height="46dp"
             android:text="@string/pessoais"
             android:background="@drawable/custom_button_private"
-            android:textSize="18sp"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
             android:textFontWeight="300"
             android:id="@+id/btn_pessoais"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="15dp"
+            android:gravity="center"
             android:drawableStart="@drawable/ic_avatar_cad_foreground"
             android:layout_below="@id/btn_perfil"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="130dp"
+            android:paddingRight="60dp"
             style="?android:attr/borderlessButtonStyle"
             />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="330dp"
+            android:layout_height="46dp"
+            android:text="@string/contato"
+            android:background="@drawable/custom_button_private"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
+            android:textFontWeight="300"
+            android:id="@+id/btn_contato"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_phone_foreground"
+            android:layout_below="@id/btn_pessoais"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="21dp"
+            android:paddingRight="172dp"
+            style="?android:attr/borderlessButtonStyle"
+            />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="330dp"
+            android:layout_height="46dp"
+            android:text="@string/endereco"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/custom_button_private"
+            android:textSize="14sp"
+            android:textFontWeight="300"
+            android:id="@+id/btn_endereco"
+            android:gravity="center"
+            android:drawableStart="@drawable/ic_house_foreground"
+            android:layout_below="@id/btn_contato"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="21dp"
+            android:paddingRight="159dp"
+            style="?android:attr/borderlessButtonStyle"
+            />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:text="@string/continuar"
+            android:fontFamily="@font/montserrat"
+            android:background="@drawable/custom_button_continue"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+            android:id="@+id/btn_entrar"
+            android:layout_below="@id/btn_endereco"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            />
     </RelativeLayout>
 
 </FrameLayout>
