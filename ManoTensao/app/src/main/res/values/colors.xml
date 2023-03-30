@@ -12,4 +12,10 @@
     <color name="off_white">#F7F6F0</color>
     <color name="light_blue">#4ACFF2</color>
     <color name="light_gray">#E1DFD6</color>
+    <color name="mostarda_fundo">#B8FFB81B</color>
+    <color name="white_card">#99F7F6F0</color>
+    <color name="gray_card">#E9E7DF</color>
+    <color name="red_button">#F03D3D</color>
+    <color name="red_card">#CDF03D3D</color>
+    <color name="yellow_card">#F8DD6F</color>
 </resources>

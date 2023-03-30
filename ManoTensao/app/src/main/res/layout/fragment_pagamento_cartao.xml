@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PagamentoCartao">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/off_white">
+
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/quero_contratar"
+                   android:textSize="20sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="500"
+                   android:id="@+id/tv_contratar"
+                   android:layout_marginTop="48dp"
+                   android:layout_centerHorizontal="true"
+                   android:textColor="#000000"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/metodo_pagamento"
+                   android:textSize="15sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="700"
+                   android:id="@+id/tv_metodo"
+                   android:layout_below="@id/tv_contratar"
+                   android:layout_marginTop="69dp"
+                   android:layout_centerHorizontal="true"
+                   android:textColor="#000000"
+                   />
+
+               <RadioGroup
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/rg_check"
+                   android:layout_below="@id/tv_metodo"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginTop="45dp"
+                   >
+
+                   <RadioButton
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/credito"
+                       android:drawableStart="@drawable/card"
+                       android:textSize="14sp"
+                       android:textFontWeight="400"
+                       android:id="@+id/rd_credito"
+                       android:textColor="@color/black"
+                       />
+
+                   <RadioButton
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/boleto"
+                       android:drawableStart="@drawable/ticket"
+                       android:textSize="14sp"
+                       android:textFontWeight="400"
+                       android:id="@+id/rd_boleto"
+                       android:textColor="@color/black"
+                       />
+
+               </RadioGroup>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/nome_cartao"
+                   android:textSize="14sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="400"
+                   android:id="@+id/tv_nome_cartao"
+                   android:layout_below="@id/rg_check"
+                   android:layout_marginTop="69dp"
+                   android:layout_marginLeft="40dp"
+                   android:textColor="#000000"
+                   />
+
+               <EditText
+                   android:layout_width="265dp"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/et_nome_cartao"
+                   android:layout_below="@id/tv_nome_cartao"
+                   android:layout_marginLeft="31dp"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/numero_cartao"
+                   android:textSize="14sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="400"
+                   android:id="@+id/tv_numero_cartao"
+                   android:layout_below="@id/et_nome_cartao"
+                   android:layout_marginTop="24dp"
+                   android:layout_marginLeft="40dp"
+                   android:textColor="#000000"
+                   />
+
+               <com.santalu.maskara.widget.MaskEditText
+                   android:id="@+id/et_numero_cartao"
+                   android:layout_width="265dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/tv_numero_cartao"
+                   android:layout_marginLeft="31dp"
+                   android:inputType="text"
+                   app:mask="____ ____ ____ ____"
+                   app:maskCharacter="_"
+                   app:maskStyle="completable"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/vencimento"
+                   android:textSize="14sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="400"
+                   android:id="@+id/tv_vencimento"
+                   android:layout_below="@id/et_numero_cartao"
+                   android:layout_marginTop="24dp"
+                   android:layout_marginLeft="40dp"
+                   android:textColor="#000000"
+                   />
+
+               <com.santalu.maskara.widget.MaskEditText
+                   android:id="@+id/et_vencimento"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/tv_vencimento"
+                   android:layout_marginLeft="31dp"
+                   android:inputType="text"
+                   app:mask="__/__/__"
+                   app:maskCharacter="_"
+                   app:maskStyle="completable"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/cvv"
+                   android:textSize="14sp"
+                   android:fontFamily="@font/montserrat"
+                   android:textFontWeight="400"
+                   android:id="@+id/tv_cvv"
+                   android:layout_below="@id/et_numero_cartao"
+                   android:layout_toRightOf="@id/tv_vencimento"
+                   android:layout_marginTop="24dp"
+                   android:layout_marginLeft="107dp"
+                   android:textColor="#000000"
+                   />
+
+               <com.santalu.maskara.widget.MaskEditText
+                   android:id="@+id/et_cvv"
+                   android:layout_width="120dp"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/tv_vencimento"
+                   android:layout_marginLeft="67dp"
+                   android:layout_toRightOf="@id/et_vencimento"
+                   android:inputType="text"
+                   app:mask="___"
+                   app:maskCharacter="_"
+                   app:maskStyle="completable"
+                   />
+
+               <CheckBox
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/cb_mesmo_endereco"
+                   android:text="@string/mesmo_endereco"
+                   android:textSize="14sp"
+                   android:fontFamily="@font/montserrat"
+                   android:layout_below="@id/et_cvv"
+                   android:textColor="@color/black"
+                   android:layout_marginTop="34dp"
+                   android:layout_marginLeft="31dp"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="88dp"
+                   android:id="@+id/ll_informacaoes"
+                   android:layout_below="@id/cb_mesmo_endereco"
+                   android:layout_marginTop="37dp"
+                   android:background="@drawable/custom_information_payment"
+                   android:gravity="center_vertical"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/tv_plano"
+                       android:text="@string/plano"
+                       android:textColor="@color/black"
+                       android:fontFamily="@font/montserrat"
+                       android:textSize="14sp"
+                       android:layout_marginLeft="28dp"
+                       />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/tv_total"
+                       android:text="@string/total"
+                       android:textColor="@color/black"
+                       android:fontFamily="@font/montserrat"
+                       android:textSize="14sp"
+                       android:layout_marginLeft="28dp"
+                       android:layout_marginTop="10dp"
+                       />
+
+               </LinearLayout>
+
+               <androidx.appcompat.widget.AppCompatButton
+                   android:layout_width="135dp"
+                   android:layout_height="30dp"
+                   android:text="@string/continuar"
+                   android:fontFamily="@font/montserrat"
+                   android:background="@drawable/custom_button_assinar"
+                   android:textSize="14sp"
+                   android:textColor="@color/white"
+                   android:textFontWeight="700"
+                   android:id="@+id/btn_entrar"
+                   android:layout_below="@id/ll_informacaoes"
+                   android:layout_centerHorizontal="true"
+                   android:layout_marginTop="25dp"
+                   android:layout_marginBottom="25dp"
+                   />
+
+           </RelativeLayout>
+
+       </ScrollView>
+
+   </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_card_basic">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/basico"
+        android:fontFamily="@font/montserrat"
+        android:textSize="16sp"
+        android:textFontWeight="400"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_plano"
+        android:layout_marginTop="79dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vinte_e_nove"
+        android:fontFamily="@font/montserrat"
+        android:textSize="48sp"
+        android:textFontWeight="700"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_vinte_e_nove"
+        android:layout_below="@id/tv_plano"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mes"
+        android:fontFamily="@font/montserrat"
+        android:textSize="16sp"
+        android:textFontWeight="400"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_mes"
+        android:layout_toRightOf="@id/tv_vinte_e_nove"
+        android:layout_below="@id/tv_plano"
+        android:layout_marginTop="43.97dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/envie_sem"
+        android:fontFamily="@font/montserrat"
+        android:textSize="15sp"
+        android:textFontWeight="300"
+        android:drawableLeft="@drawable/check_circle"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_envie_sem"
+        android:layout_below="@id/tv_vinte_e_nove"
+        android:layout_marginTop="64dp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/doze_propostas"
+        android:fontFamily="@font/montserrat"
+        android:textSize="15sp"
+        android:textFontWeight="300"
+        android:drawableLeft="@drawable/check_circle"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_doze"
+        android:layout_below="@id/tv_envie_sem"
+        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@id/tv_envie_sem"
+        android:textColor="@color/black"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="135dp"
+        android:layout_height="30dp"
+        android:text="@string/assinar"
+        android:fontFamily="@font/montserrat"
+        android:background="@drawable/custom_button_assinar"
+        android:textSize="14sp"
+        android:textFontWeight="700"
+        android:textColor="@color/white"
+        android:id="@+id/btn_entrar"
+        android:layout_below="@id/tv_doze"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="310dp"
+        />
+
+</RelativeLayout>

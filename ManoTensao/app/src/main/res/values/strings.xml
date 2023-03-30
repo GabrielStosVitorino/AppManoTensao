@@ -43,6 +43,30 @@
     <string name="sobre_mim">Sobre mim</string>
     <string name="cnpj">CNPJ</string>
     <string name="escreva_mais">Escreva mais sobre você!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="planos">Nossos planos</string>
+    <string name="selecione">Selecione o melhor para o seu negócio!</string>
+    <string name="basico">PLANO BÁSICO</string>
+    <string name="vinte_e_nove">R$29,99</string>
+    <string name="mes">/mês</string>
+    <string name="envie_sem">  Envie mensagens sem cobrança</string>
+    <string name="doze_propostas">  Obtenha até 12 propostas</string>
+    <string name="assinar">Assinar</string>
+    <string name="premium">PLANO PREMIUM</string>
+    <string name="cento_e_nove">R$109,99</string>
+    <string name="templete">  Template de orçamento</string>
+    <string name="ilimitadas">  Propostas ilimitadas</string>
+    <string name="pro">PLANO PRO</string>
+    <string name="setenta_e_quatro">R$74,99</string>
+    <string name="vinte_cinco_propostas">  Obtenha até 25 propostas</string>
+    <string name="credito">  Cartão de crédito</string>
+    <string name="metodo_pagamento">Método de pagamento</string>
+    <string name="boleto">  Boleto bancário</string>
+    <string name="nome_cartao">Nome impresso no cartão</string>
+    <string name="numero_cartao">Número do cartão</string>
+    <string name="vencimento">Vencimento</string>
+    <string name="cvv">CVV</string>
+    <string name="mesmo_endereco">Usar mesmo endereço de cobrança</string>
+    <string name="plano">Plano:</string>
+    <string name="total">Total:</string>
+    <string name="gerar_boleto">Ao gerar o boleto, fique atento ao vencimento:</string>
 </resources>
