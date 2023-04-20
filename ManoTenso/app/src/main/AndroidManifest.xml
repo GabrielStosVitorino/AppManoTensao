@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ManoTensão"
+        tools:targetApi="31">
+        <activity
+            android:name=".EditarSobreMimPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".EditarEnderecoPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".EditarContatoPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".EditarInfosPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPrefilPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".EditarEnderecoCliente"
+            android:exported="false" />
+        <activity
+            android:name=".EditarContatoCliente"
+            android:exported="false" />
+        <activity
+            android:name=".EditarInfosCliente"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPerfilCliente"
+            android:exported="false" />
+        <activity
+            android:name=".PagamentoCartao"
+            android:exported="false" />
+        <activity
+            android:name=".Planos"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroSobreMimPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroEnderecoPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroContatoPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroInfosPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroPrestador"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroClienteConcluido"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroEnderecoCliente"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroContatoCliente"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroInfosCliente"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroCliente"
+            android:exported="false" />
+        <activity
+            android:name=".Cadastro"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".LoadingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
