@@ -1,155 +1,124 @@
 package com.example.manotenso
 
 import retrofit2.Call
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface Api {
-    @GET("usuarios")
-    fun getTodos() : Call<List<Usuario>>
 
-    @GET("usuarios")
-    fun getPorLoginSenha(@Query("login_senha") loginSenha: String) : Call<List<Usuario>>
+    //                                  CLIENTE
+    @POST("/clientes/autenticacao-cliente/{email}/{senha}")
+    fun loginCliente(@Query("email") email: String, @Query("senha") senha: String): Call<Cliente>
 
-    ////////////////////////////cliente///////////////////////////
-    @POST("/autenticacao-cliente/{email}/{senha}")
-    fun login(@Query("email") email: String, @Query("senha") senha: String){
-    }
+    @DELETE("/clientes/logoff-cliente/{id}")
+    fun logoffCliente(@Query("id") id: Int): Call<Void>
 
-    @DELETE("/logoff-cliente/{id}")
-    fun logoff(@Query id: Int): ResponseEntity<Void?>? {
-    }
+    @GET("/clientes")
+    fun getClientes(): Call<List<Cliente>>
 
-    @GET
-    fun get(): ResponseEntity<List<Cliente?>?>? {
-    }
+    @POST("/clientes")
+    fun postCliente(novoUsuario: Cliente): Call<Cliente>
 
-    @POST
-    fun post() {
-    }
+    @DELETE("/clientes/{id}")
+    fun deleteCliente(@Query("id") id: Int): Call<Void>
 
-    @DELETE("/{id}")
-    fun delete(@Query("idCliente") id: Int) {
-    }
+    @PUT("/clientes/{id}")
+    fun putCliente(@Query("idCliente") id: Int, @Query("cliente") cliente: Cliente): Call<Cliente>
 
-    @PUT("/{id}")
-    fun put(@Query("idCliente") id: Int, @RequestBody cliente: Cliente) {
-    }
+    fun lerArquivoTxtCliente(@Query("nomeArq") nomeArq: String): Call<CartaApresentacao>
 
-    fun lerArquivoTxt(nomeArq: String?): CartaApresentacao? {
-    }
+    @PUT("/clientes/receber-apresentacao")
+    fun apresentacaoCliente(
+        @Query("idCliente") idCliente: Int,
+        @Query("nomeArq") nomeArq: String
+    ): Call<CartaApresentacao>
 
-    @PUT("/receber-apresentacao")
-    fun apresentacao() {
+    //                              PRESTADOR
 
-    }
+    @POST("/prestadores/autenticacao-prestador/{email}/{senha}")
+    fun loginPrestador(
+        @Query("email") email: String,
+        @Query("senha") senha: String
+    ): Call<Prestador>
 
-    ////////////////////////////prestador///////////////////////////
+    @DELETE("/prestadores/logoff-prestador/{id}")
+    fun logoffPrestador(@Query("id") id: Int): Call<Void>
 
-    @POST("/autenticacao-prestador/{email}/{senha}")
-    fun login(
-        @QUERY("email") email: String?,
-        @QUERY("senha") senha: String?
-    ){
-    }
+    @GET("/prestadores")
+    fun getPrestadores(): Call<List<Prestador>>
 
-    @DELETE("/logoff-prestador/{id}")
-    fun logoff(@QUERY id: Int){
-    }
+    @GET("/prestadores/filtro-por-servico/{idServico}/{segundaVariacao}/{terceiraVariacao}/{quartaVariacao}")
+    fun getPorServicoPrestador(
+        @Query("idServico") idServico: Int,
+        @Query("segundaVariacao") segundaVariacao: Int,
+        @Query("terceiraVariacao") terceiraVariacao: Int,
+        @Query("quartaVariacao") quartaVariacao: Int
+    ): Call<List<FiltroPorAvaliacao>>
 
-    @GET
-    fun get(){
-    }
+    @POST("/prestadores")
+    fun postPrestador(@Query("novoPrestador") novoPrestador: Prestador): Call<Prestador>
 
-    @GET("/filtro-por-servico/{idServico}/{segundaVariacao}/{terceiraVariacao}/{quartaVariacao}")
-    operator fun get(
-        @QUERY idServico: Int, @QUERY segundaVariacao: Int,
-        @QUERY terceiraVariacao: Int, @QUERY quartaVariacao: Int
-    ){
-    }
+    @DELETE("/prestadores/{id}")
+    fun deletePrestador(@Query("id") id: Int): Call<Void>
 
-    @POST
-    fun post(@RequestBody novoPrestador: PrestadorServico) {
-    }
+    @PUT("/prestadores/{id}")
+    fun putPrestador(
+        @Query("id") id: Int,
+        prestador: Prestador
+    ): Call<Prestador>
 
-    @DELETE("/{id}")
-    fun delete(@QUERY id: Int){
-    }
+    fun lerArquivoTxtPrestador(nomeArq: String): Call<CartaApresentacao>
 
-    @PUT("/{id}")
-    fun put(
-        @QUERY id: Int,
-        @RequestBody prestador: PrestadorServico
-    ){
-    }
+    fun gerarBoletoPrestador(prestador: Prestador, nomeArq: String): Call<Void>
 
-    fun lerArquivoTxt(nomeArq: String?): CartaApresentacao? {
-        System.out.println("Achei o arquivo!")
-    }
+    fun gravaRegistroPrestador(registro: String, nomeArq: String?)
 
-    fun gerarBoleto(prestador: PrestadorServico, nomeArq: String?) {
-    }
+    @GET("/prestadores/carta-apresentacao/{idPrestador}")
+    fun cartaApresentacaoPrestador(@Query("idPrestador") idPrestador: Int): Call<CartaApresentacao>
 
-    fun gravaRegistro(registro: String, nomeArq: String?) {
-    }
+    @GET("/prestadores/gerar-boleto/{idPrestador}")
+    fun boletoTxtPrestador(@Query("idPrestador") idPrestador: Int): Call<Prestador>
 
-    @GET("/carta-apresentacao/{idPrestador}")
-    fun cartaApresentacao(@QUERY idPrestador: Int) {
-    }
+    @PUT("/prestadores/receber-apresentacao")
+    fun apresentacaoPrestador(
+        idPrestador: Int,
+        nomeArq: String
+    ): Call<CartaApresentacao>
 
-    @GET("/gerar-boleto/{idPrestador}")
-    fun boletoTxt(@QUERY idPrestador: Int){
-    }
+    @GET("/prestadores/quantidade-propostas/{idPrestador}")
+    fun getPropostasNoUltimoMesPrestador(@Query("idPrestador") idPrestador: Int): Call<Int>
 
-    @PUT("/receber-apresentacao")
-    fun apresentacao(
-        @RequestParam idPrestador: Int,
-        @RequestParam nomeArq: String?
-    ): ResponseEntity<CartaApresentacao?>? {
-    }
+    //                                 SERVICO
 
-    @GET("/quantidade-propostas/{idPrestador}")
-    fun getPropostasNoUltimoMes(@QUERY idPrestador: Int) {
-    }
+    @GET("/servicos")
+    fun getServico(): Call<List<Servico>>
+
+    @POST("/servicos")
+    fun postServico(novoServico: Servico?): Call<Servico>
+
+    @DELETE("/servicos/{id}")
+    fun deleteServicos(@Query("id") id: Int): Call<Void>
+
+    @PUT("/servicos/{id}")
+    fun putServico(@Query("id") id: Int, servico: Servico): Call<Servico>
 
 
+    //                                  PLANO
 
-    ////////////////////////////servico///////////////////////////
-
-    @GET
-    fun get(){
-
-    }
-
-    @POST
-    fun post(@RequestBody novoServico: Servico?) {
-    }
-
-    @DELETE("/{id}")
-    fun delete(@PathVariable id: Int) {
-    }
-
-    @PUT("/{id}")
-    fun put(@PathVariable id: Int, @RequestBody servico: Servico){
-    }
+    @GET("/planos")
+    fun getPlanos(): Call<List<Plano>>
 
 
-    ////////////////////////////plano///////////////////////////
+    @POST("/planos")
+    fun postPlanos(novoPlano: Plano): Call<Plano>
 
-    @GET
-    fun get() {
-    }
+    @DELETE("/planos/{id}")
+    fun deletePlanos(@Query("id") id: Int): Call<Void>
 
-
-    @POST
-    fun post(@RequestBody novoPlano: Plano?) {
-    }
-
-    @DELETE("/{id}")
-    fun delete(@PathVariable id: Int) {
-    }
-
-    @PUT("/{id}")
-    fun put(@PathVariable id: Int, @RequestBody plano: Plano) {
+    @PUT("/planos/{id}")
+    fun putPlanos(@Query("id") id: Int, plano: Plano): Call<Plano>
 
 }

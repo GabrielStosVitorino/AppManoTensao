@@ -9,177 +9,168 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/off_white">
+        android:background="@color/off_white"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mano"
-            android:textSize="24sp"
-            android:fontFamily="@font/electricshocker"
-            android:textFontWeight="400"
             android:id="@+id/tv_mano"
-            android:layout_marginTop="48dp"
-            android:layout_marginLeft="18dp"
-            android:textColor="#000000"
-            />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bem_vindo"
-            android:textSize="14sp"
-            android:fontFamily="@font/montserrat"
-            android:textFontWeight="600"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/electricshocker"
+            android:text="@string/mano"
+            android:textColor="#000000"
+            android:textFontWeight="400"
+            android:textSize="24sp" />
+
+        <TextView
             android:id="@+id/tv_bem_vindo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_mano"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="169dp"
-            android:layout_below="@id/tv_mano"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/bem_vindo"
             android:textColor="#000000"
-            />
+            android:textFontWeight="600"
+            android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="14sp"
-            android:fontFamily="@font/montserrat"
-            android:textFontWeight="100"
-            android:id="@+id/tv_email"
-            android:layout_marginTop="51dp"
-            android:layout_marginLeft="63dp"
             android:layout_below="@id/tv_bem_vindo"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="51dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/email"
             android:textColor="#000000"
-            />
+            android:textFontWeight="100"
+            android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/et_input_email"
             android:layout_width="301dp"
             android:layout_height="43dp"
-            android:id="@+id/et_input_email"
-            android:hint="@string/email_input"
             android:layout_below="@id/tv_email"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:background="@drawable/custom_input"
-            android:paddingLeft="32dp"
-            />
+            android:hint="@string/email_input"
+            android:paddingLeft="32dp" />
 
         <TextView
+            android:id="@+id/tv_senha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/senha"
-            android:textSize="14sp"
-            android:fontFamily="@font/montserrat"
-            android:textFontWeight="100"
-            android:id="@+id/tv_senha"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="63dp"
             android:layout_below="@id/et_input_email"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/senha"
             android:textColor="#000000"
-            />
+            android:textFontWeight="100"
+            android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/et_input_senha"
             android:layout_width="301dp"
             android:layout_height="43dp"
-            android:id="@+id/et_input_senha"
-            android:hint="@string/senha_input"
             android:layout_below="@id/tv_senha"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:background="@drawable/custom_input"
-            android:paddingLeft="32dp"
             android:drawableRight="@drawable/closeeye"
-            android:paddingRight="19dp"
-            />
+            android:hint="@string/senha_input"
+            android:paddingLeft="32dp"
+            android:paddingRight="19dp" />
 
         <TextView
+            android:id="@+id/tv_esqueci_senha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/esqueci_senha"
-            android:textSize="11sp"
-            android:fontFamily="@font/montserrat"
-            android:textFontWeight="400"
-            android:id="@+id/tv_esqueci_senha"
-            android:layout_marginTop="11dp"
-            android:layout_marginLeft="63dp"
             android:layout_below="@id/et_input_senha"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/esqueci_senha"
             android:textColor="#000000"
-            />
+            android:textFontWeight="400"
+            android:textSize="11sp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_entrar"
             android:layout_width="147dp"
             android:layout_height="40dp"
-            android:text="@string/entrar"
-            android:background="@drawable/custom_buttom_enter"
-            android:textSize="14sp"
-            android:textFontWeight="600"
-            android:id="@+id/btn_entrar"
             android:layout_below="@id/tv_esqueci_senha"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
-            />
+            android:background="@drawable/custom_buttom_enter"
+            android:text="@string/entrar"
+            android:textFontWeight="600"
+            android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tv_nao_tenho_cadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nao_tenho_cadastro"
-            android:textSize="11sp"
-            android:fontFamily="@font/montserrat"
-            android:textFontWeight="400"
-            android:id="@+id/tv_nao_tenho_cadastro"
-            android:layout_marginTop="34dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/btn_entrar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/nao_tenho_cadastro"
             android:textColor="#000000"
-            />
+            android:textFontWeight="400"
+            android:textSize="11sp" />
 
         <ImageView
+            android:id="@+id/iv_line"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/line"
-            android:id="@+id/iv_line"
             android:layout_below="@id/tv_nao_tenho_cadastro"
             android:layout_marginTop="20dp"
-            />
+            android:src="@mipmap/line" />
 
         <TextView
+            android:id="@+id/tv_ou"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ou"
-            android:textSize="11sp"
-            android:fontFamily="@font/montserrat_thin"
-            android:textFontWeight="100"
-            android:id="@+id/tv_ou"
-            android:layout_marginTop="13dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/tv_nao_tenho_cadastro"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/montserrat_thin"
+            android:text="@string/ou"
             android:textColor="#000000"
-            />
+            android:textFontWeight="100"
+            android:textSize="11sp" />
 
         <ImageView
+            android:id="@+id/iv_line2"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
-            android:src="@mipmap/line"
-            android:id="@+id/iv_line2"
             android:layout_below="@id/tv_nao_tenho_cadastro"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/tv_nao_tenho_cadastro"
-            />
+            android:src="@mipmap/line" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_google"
             android:layout_width="147dp"
             android:layout_height="27dp"
-            android:text="@string/google"
-            android:background="@drawable/custom_buttom_google"
-            android:textSize="8sp"
-            android:textFontWeight="600"
-            android:drawableStart="@drawable/googleicon"
-            android:gravity="center"
-            android:id="@+id/btn_google"
             android:layout_below="@id/tv_ou"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
+            android:background="@drawable/custom_buttom_google"
+            android:drawableStart="@drawable/googleicon"
+            android:gravity="center"
             android:paddingLeft="11dp"
+            android:text="@string/google"
+            android:textFontWeight="600"
+            android:textSize="8sp"
+            android:onClick="cadastrar"
 
             />
 
