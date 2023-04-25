@@ -153,6 +153,7 @@
                     android:layout_below="@id/tv_crie_senha"
                     android:id="@+id/et_crie_senha"
                     android:layout_marginLeft="36dp"
+                    android:password="true"
                     />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -204,6 +205,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="30dp"
+                    android:onClick="cadastroContato"
                     />
             </RelativeLayout>
         </ScrollView>

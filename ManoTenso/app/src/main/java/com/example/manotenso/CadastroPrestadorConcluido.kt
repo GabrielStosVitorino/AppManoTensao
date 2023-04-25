@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class CadastroInfosPrestador : AppCompatActivity() {
+class CadastroPrestadorConcluido : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_infos_prestador)
+        setContentView(R.layout.activity_cadastro_prestador_concluido)
     }
 
-    fun cadastroContatoPrestador(componente: View) {
-        val tela = Intent(applicationContext, CadastroContatoPrestador::class.java)
+    fun homePrestador(componente: View) {
+        val tela = Intent(applicationContext, HomePrestador::class.java)
         startActivity(tela)
     }
 }

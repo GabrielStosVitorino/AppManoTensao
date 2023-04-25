@@ -1,7 +1,9 @@
 package com.example.manotenso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,6 +43,11 @@ class CadastroPrestador : AppCompatActivity() {
                 t.printStackTrace()
             }
         })
+    }
+
+    fun cadastroInfosPrestador(componente: View) {
+        val tela = Intent(applicationContext, CadastroInfosPrestador::class.java)
+        startActivity(tela)
     }
 
 }

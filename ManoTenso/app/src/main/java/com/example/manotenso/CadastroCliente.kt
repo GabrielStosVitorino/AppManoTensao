@@ -1,7 +1,9 @@
 package com.example.manotenso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,33 +15,8 @@ class CadastroCliente : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro_cliente)
     }
 
-    fun cadastrarCliente(){
-        val novoUsuario = Cliente (
-            email = "gabriel@bandtec.com.br",
-            senha = "verdão"
-        )
-        val api = Apis.getApi()
-        val chamada = api.postCliente(novoUsuario)
-        chamada.enqueue(object : Callback<Cliente> {
-
-            override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
-                if (response.isSuccessful) {
-                    val resposta = response.body()
-                    if (resposta != null) {
-
-                    } else {
-
-                    }
-                } else {
-
-                }
-            }
-
-            override fun onFailure(call: Call<Cliente>, t: Throwable) {
-                Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                    Toast.LENGTH_SHORT).show()
-                t.printStackTrace()
-            }
-            })
-        }
+    fun cadastroInfosCliente(componente: View) {
+        val tela = Intent(applicationContext, CadastroInfosCliente::class.java)
+        startActivity(tela)
     }
+}

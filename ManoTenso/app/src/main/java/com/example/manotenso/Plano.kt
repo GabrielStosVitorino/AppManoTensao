@@ -1,7 +1,7 @@
 package com.example.manotenso
 
 data class Plano(
-    val idPlanoval : Int,
-    val tipoPlanoval : String,
+    val idPlano : Int,
+    val tipoPlano : String,
     val valorPlano: Double
 )

@@ -1,16 +1,14 @@
 package com.example.manotenso
 
-import java.time.ZonedDateTime
-
 data class Cliente(
 
     val idCliente: Int? = null,
     val nome: String? = null,
-    val email :String,
-    val senha: String,
+    val email: String?,
+    val senha: String?,
     val telefone: String? = null,
     val cpf: String? = null,
-    val dtNascimento: ZonedDateTime? = null,
+    val dtNascimento: String? = null,
     val cep: String? = null,
     val bairro: String? = null,
     val rua: String? = null,

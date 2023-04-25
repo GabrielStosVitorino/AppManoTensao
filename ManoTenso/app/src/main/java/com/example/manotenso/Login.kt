@@ -1,7 +1,12 @@
 package com.example.manotenso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,27 +18,24 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
     }
 
-    fun cadastrar(){
-        val usuario = "cliente"
-        val email = "gabriel@bandtec.com.br" // Joao Oliveira
-        val senha = "verdão" // joao123
+    fun logar(componente: View){
+        val email = findViewById<EditText>(R.id.et_input_email).text.toString() // Joao Oliveira
+        val senha = findViewById<EditText>(R.id.et_input_senha).text.toString() // joao123
+        val checkBox = findViewById<CheckBox>(R.id.cb_e_prestador).isChecked()
         val api = Apis.getApi()
 
-        if(usuario == "cliente"){
+        if(!checkBox){
             val chamada = api.loginCliente(email, senha)
 
             chamada.enqueue(object : Callback<Cliente> {
 
                 override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
-                    if (response.isSuccessful) {
-                        val resposta = response.body()
-                        if (resposta != null) {
-
-                        } else {
-
-                        }
+                    val resposta = response.body()
+                    if (resposta != null) {
+                        val telaLoginCliente = Intent(applicationContext, HomeCliente::class.java)
+                        startActivity(telaLoginCliente)
                     } else {
-
+                        println("segundo else cliente")
                     }
                 }
 
@@ -43,21 +45,19 @@ class Login : AppCompatActivity() {
                     t.printStackTrace()
                 }
             })
-        } else if(usuario == "prestador"){
+        } else if(checkBox){
             val chamada = api.loginPrestador(email, senha)
 
             chamada.enqueue(object : Callback<Prestador> {
 
                 override fun onResponse(call: Call<Prestador>, response: Response<Prestador>) {
-                    if (response.isSuccessful) {
-                        val resposta = response.body()
-                        if (resposta != null) {
-
-                        } else {
-
-                        }
+                    val resposta = response.body()
+                    if (resposta != null) {
+                        val telaLoginPrestador = Intent(applicationContext, HomePrestador::class.java)
+                        startActivity(telaLoginPrestador)
                     } else {
-
+                        println("segundo else prestador")
+                        println(resposta)
                     }
                 }
 
@@ -69,6 +69,11 @@ class Login : AppCompatActivity() {
             })
         }
 
+    }
+
+    fun cadastro(componente: View) {
+        val telaCadastro = Intent(applicationContext, Cadastro::class.java)
+        startActivity(telaCadastro)
     }
 
 }

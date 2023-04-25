@@ -5,6 +5,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface Api {
@@ -40,8 +41,8 @@ interface Api {
 
     @POST("/prestadores/autenticacao-prestador/{email}/{senha}")
     fun loginPrestador(
-        @Query("email") email: String,
-        @Query("senha") senha: String
+        @Path("email") email: String,
+        @Path("senha") senha: String
     ): Call<Prestador>
 
     @DELETE("/prestadores/logoff-prestador/{id}")

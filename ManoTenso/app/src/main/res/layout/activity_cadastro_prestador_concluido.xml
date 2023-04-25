@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroClienteConcluido">
+    tools:context=".CadastroPrestadorConcluido">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -72,7 +72,7 @@
             android:layout_below="@id/tv_agora_voce"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:onClick="homeCliente"
+            android:onClick="homePrestador"
             />
     </RelativeLayout>
 

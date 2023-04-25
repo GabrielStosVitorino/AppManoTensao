@@ -62,6 +62,7 @@
             android:background="@drawable/custom_buttom"
             android:scaleType="fitCenter"
             app:tint="@color/black"
+            android:onClick="entrarLogin"
             />
 
         <ImageView
