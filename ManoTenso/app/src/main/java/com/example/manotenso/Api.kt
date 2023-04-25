@@ -12,22 +12,22 @@ interface Api {
 
     //                                  CLIENTE
     @POST("/clientes/autenticacao-cliente/{email}/{senha}")
-    fun loginCliente(@Query("email") email: String, @Query("senha") senha: String): Call<Cliente>
+    fun loginCliente(@Path("email") email: String, @Path("senha") senha: String): Call<Cliente>
 
     @DELETE("/clientes/logoff-cliente/{id}")
-    fun logoffCliente(@Query("id") id: Int): Call<Void>
+    fun logoffCliente(@Path("id") id: Int): Call<Void>
 
     @GET("/clientes")
     fun getClientes(): Call<List<Cliente>>
 
     @POST("/clientes")
-    fun postCliente(novoUsuario: Cliente): Call<Cliente>
+    fun postCliente(@Query("novoUsuario") novoUsuario: Cliente): Call<Cliente>
 
     @DELETE("/clientes/{id}")
-    fun deleteCliente(@Query("id") id: Int): Call<Void>
+    fun deleteCliente(@Path("id") id: Int): Call<Void>
 
     @PUT("/clientes/{id}")
-    fun putCliente(@Query("idCliente") id: Int, @Query("cliente") cliente: Cliente): Call<Cliente>
+    fun putCliente(@Path("idCliente") id: Int, @Query("cliente") cliente: Cliente): Call<Cliente>
 
     fun lerArquivoTxtCliente(@Query("nomeArq") nomeArq: String): Call<CartaApresentacao>
 
@@ -46,29 +46,29 @@ interface Api {
     ): Call<Prestador>
 
     @DELETE("/prestadores/logoff-prestador/{id}")
-    fun logoffPrestador(@Query("id") id: Int): Call<Void>
+    fun logoffPrestador(@Path("id") id: Int): Call<Void>
 
     @GET("/prestadores")
     fun getPrestadores(): Call<List<Prestador>>
 
     @GET("/prestadores/filtro-por-servico/{idServico}/{segundaVariacao}/{terceiraVariacao}/{quartaVariacao}")
     fun getPorServicoPrestador(
-        @Query("idServico") idServico: Int,
-        @Query("segundaVariacao") segundaVariacao: Int,
-        @Query("terceiraVariacao") terceiraVariacao: Int,
-        @Query("quartaVariacao") quartaVariacao: Int
+        @Path("idServico") idServico: Int,
+        @Path("segundaVariacao") segundaVariacao: Int,
+        @Path("terceiraVariacao") terceiraVariacao: Int,
+        @Path("quartaVariacao") quartaVariacao: Int
     ): Call<List<FiltroPorAvaliacao>>
 
     @POST("/prestadores")
     fun postPrestador(@Query("novoPrestador") novoPrestador: Prestador): Call<Prestador>
 
     @DELETE("/prestadores/{id}")
-    fun deletePrestador(@Query("id") id: Int): Call<Void>
+    fun deletePrestador(@Path("id") id: Int): Call<Void>
 
     @PUT("/prestadores/{id}")
     fun putPrestador(
-        @Query("id") id: Int,
-        prestador: Prestador
+        @Path("id") id: Int,
+        @Query("prestador") prestador: Prestador
     ): Call<Prestador>
 
     fun lerArquivoTxtPrestador(nomeArq: String): Call<CartaApresentacao>
@@ -78,19 +78,19 @@ interface Api {
     fun gravaRegistroPrestador(registro: String, nomeArq: String?)
 
     @GET("/prestadores/carta-apresentacao/{idPrestador}")
-    fun cartaApresentacaoPrestador(@Query("idPrestador") idPrestador: Int): Call<CartaApresentacao>
+    fun cartaApresentacaoPrestador(@Path("idPrestador") idPrestador: Int): Call<CartaApresentacao>
 
     @GET("/prestadores/gerar-boleto/{idPrestador}")
-    fun boletoTxtPrestador(@Query("idPrestador") idPrestador: Int): Call<Prestador>
+    fun boletoTxtPrestador(@Path("idPrestador") idPrestador: Int): Call<Prestador>
 
     @PUT("/prestadores/receber-apresentacao")
     fun apresentacaoPrestador(
-        idPrestador: Int,
-        nomeArq: String
+        @Query("idPrestador") idPrestador: Int,
+        @Query("nomeArq") nomeArq: String
     ): Call<CartaApresentacao>
 
     @GET("/prestadores/quantidade-propostas/{idPrestador}")
-    fun getPropostasNoUltimoMesPrestador(@Query("idPrestador") idPrestador: Int): Call<Int>
+    fun getPropostasNoUltimoMesPrestador(@Path("idPrestador") idPrestador: Int): Call<Int>
 
     //                                 SERVICO
 
@@ -98,13 +98,13 @@ interface Api {
     fun getServico(): Call<List<Servico>>
 
     @POST("/servicos")
-    fun postServico(novoServico: Servico?): Call<Servico>
+    fun postServico(@Query("novoServico") novoServico: Servico?): Call<Servico>
 
     @DELETE("/servicos/{id}")
-    fun deleteServicos(@Query("id") id: Int): Call<Void>
+    fun deleteServicos(@Path("id") id: Int): Call<Void>
 
     @PUT("/servicos/{id}")
-    fun putServico(@Query("id") id: Int, servico: Servico): Call<Servico>
+    fun putServico(@Path("id") id: Int, @Query("servico") servico: Servico): Call<Servico>
 
 
     //                                  PLANO
@@ -114,12 +114,12 @@ interface Api {
 
 
     @POST("/planos")
-    fun postPlanos(novoPlano: Plano): Call<Plano>
+    fun postPlanos(@Query("novoPlano") novoPlano: Plano): Call<Plano>
 
     @DELETE("/planos/{id}")
-    fun deletePlanos(@Query("id") id: Int): Call<Void>
+    fun deletePlanos(@Path("id") id: Int): Call<Void>
 
     @PUT("/planos/{id}")
-    fun putPlanos(@Query("id") id: Int, plano: Plano): Call<Plano>
+    fun putPlanos(@Path("id") id: Int, plano: Plano): Call<Plano>
 
 }

@@ -19,8 +19,8 @@ class Login : AppCompatActivity() {
     }
 
     fun logar(componente: View){
-        val email = findViewById<EditText>(R.id.et_input_email).text.toString() // Joao Oliveira
-        val senha = findViewById<EditText>(R.id.et_input_senha).text.toString() // joao123
+        val email = findViewById<EditText>(R.id.et_input_email).text.toString()
+        val senha = findViewById<EditText>(R.id.et_input_senha).text.toString()
         val checkBox = findViewById<CheckBox>(R.id.cb_e_prestador).isChecked()
         val api = Apis.getApi()
 
@@ -36,6 +36,7 @@ class Login : AppCompatActivity() {
                         startActivity(telaLoginCliente)
                     } else {
                         println("segundo else cliente")
+                        println(resposta)
                     }
                 }
 
