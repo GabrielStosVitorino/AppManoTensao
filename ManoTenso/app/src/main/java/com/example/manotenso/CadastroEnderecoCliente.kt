@@ -27,13 +27,6 @@ class CadastroEnderecoCliente : AppCompatActivity() {
     fun cadastrarCliente(componente: View){
         val dadosCliente = intent.getSerializableExtra("dadosCliente") as dadosCliente
 
-        val cep = findViewById<EditText>(R.id.et_cep).text.toString()
-        val bairro = findViewById<EditText>(R.id.et_bairro).text.toString()
-        val logradouro = findViewById<EditText>(R.id.et_logradouro).text.toString()
-        val numero = findViewById<EditText>(R.id.et_numero).text.toString()
-        val complemento = findViewById<EditText>(R.id.et_complemento).text.toString()
-
-
         val novoUsuario = Cliente (
             nome = dadosCliente.nomeCompleto,
             cpf = dadosCliente.cpf,

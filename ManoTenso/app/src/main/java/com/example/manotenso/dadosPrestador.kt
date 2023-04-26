@@ -8,7 +8,7 @@ data class dadosPrestador(
     val senha: String,
     val telefone: String? = null,
     val cpf: String? = null,
-    val dtNascimento: LocalDate? = null,
+    val dtNascimento: String? = null,
     val cep: String? = null,
     val bairro: String? = null,
     val rua: String? = null,

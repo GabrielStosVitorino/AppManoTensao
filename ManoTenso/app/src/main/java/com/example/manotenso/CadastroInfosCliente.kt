@@ -20,10 +20,9 @@ class CadastroInfosCliente : AppCompatActivity() {
     }
 
    fun cadastroContato(componente: View) {
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
         val nomeCompleto = binding.etNomeCompleto.text.toString()
         val cpf = binding.etCpf.text.toString()
-        val nascimento = LocalDate.parse((binding.etDataNascimento.text.toString()), formatter)
+        val nascimento = binding.etDataNascimento.text.toString()
         val senha = binding.etCrieSenha.text.toString()
 
         val dadosCliente = dadosCliente(nomeCompleto, cpf, nascimento, senha)

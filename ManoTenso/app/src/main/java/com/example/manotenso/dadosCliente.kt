@@ -6,7 +6,7 @@ import java.time.LocalDate
 data class dadosCliente(
     val nomeCompleto: String,
     val cpf: String? = "",
-    val nascimento: LocalDate? = null,
+    val nascimento: String? = null,
     val senha: String? = "",
     val email: String? = null,
     val telefone: String? = null,
