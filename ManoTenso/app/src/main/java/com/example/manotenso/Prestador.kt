@@ -1,7 +1,5 @@
 package com.example.manotenso
 
-import java.time.LocalDate
-
 data class Prestador(
 
     val id: Int? = null,

@@ -1,7 +1,6 @@
 package com.example.manotenso
 
 import java.io.Serializable
-import java.time.LocalDate
 
 data class dadosCliente(
     val nomeCompleto: String,

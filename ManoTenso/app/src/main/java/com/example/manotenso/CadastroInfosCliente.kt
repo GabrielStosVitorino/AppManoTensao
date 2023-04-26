@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import com.example.manotenso.databinding.ActivityCadastroInfosClienteBinding
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class CadastroInfosCliente : AppCompatActivity() {
 
