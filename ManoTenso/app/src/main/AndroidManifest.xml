@@ -56,6 +56,9 @@
             android:name=".Planos"
             android:exported="false" />
         <activity
+            android:name=".CadastroPrestadorConcluido"
+            android:exported="false" />
+        <activity
             android:name=".CadastroSobreMimPrestador"
             android:exported="false" />
         <activity

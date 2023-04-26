@@ -71,6 +71,11 @@
     <string name="gerar_boleto">Ao gerar o boleto, fique atento ao vencimento:</string>
     <string name="salvar">Salvar</string>
     <string name="e_prestador">É prestador?</string>
+    <string name="bem_vindo_mano">Bem-vindo a </string>
+    <string name="manoTensao">ManoTensão!</string>
+    <string name="time">Agora você faz parte desse grande time</string>
+    <string name="trabalho_prestador">Seus clientes estão lhe esperando!</string>
+    <string name="trabalho_cliente">Nossos prestadores estão ansiosos para\ntrabalahrem junto com você</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

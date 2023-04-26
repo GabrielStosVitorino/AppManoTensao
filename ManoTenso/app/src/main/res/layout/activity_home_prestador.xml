@@ -9,10 +9,88 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/yellow_card">
+        android:background="@color/background_blue">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bem_vindo_mano"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/tv_bem_vindo_mano"
+            android:layout_marginLeft="60dp"
+            android:textSize="25sp"
+            android:layout_marginTop="260dp"
+            android:textColor="@color/black"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manoTensao"
+            android:fontFamily="@font/electricshocker"
+            android:id="@+id/tv_mano_tensao"
+            android:textSize="30sp"
+            android:layout_marginTop="261dp"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@+id/tv_bem_vindo_mano"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/tv_time"
+            android:textSize="17sp"
+            android:layout_below="@+id/tv_bem_vindo_mano"
+            android:layout_marginLeft="45dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trabalho_prestador"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/tv_trabalho_prestador"
+            android:textSize="18sp"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/black"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:text="@string/entrar"
+            android:fontFamily="@font/montserrat"
+            android:backgroundTint="@color/yellow_ball"
+            android:background="@drawable/custom_button_continue"
+            android:textSize="14sp"
+            android:textFontWeight="400"
+            android:id="@+id/btn_entrar"
+            android:layout_below="@id/tv_trabalho_prestador"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:onClick="homePrestador"
+            />
+
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="-110dp"
+            android:layout_marginLeft="-80dp"
+            android:src="@mipmap/ellipseyellow"/>
+
+        <ImageView
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="590dp"
+            android:layout_marginBottom="-110dp"
+            android:layout_marginRight="-80dp"
+            android:layout_marginLeft="190dp"
+            android:src="@mipmap/ellipseyellow"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

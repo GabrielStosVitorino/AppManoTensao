@@ -61,7 +61,7 @@ interface Api {
     ): Call<List<FiltroPorAvaliacao>>
 
     @POST("/prestadores")
-    fun postPrestador(@Query("novoPrestador") novoPrestador: Prestador): Call<Prestador>
+    fun postPrestador(@Body novoPrestador: Prestador): Call<Prestador>
 
     @DELETE("/prestadores/{id}")
     fun deletePrestador(@Path("id") id: Int): Call<Void>

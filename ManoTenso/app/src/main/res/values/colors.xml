@@ -19,4 +19,7 @@
     <color name="red_card">#CDF03D3D</color>
     <color name="yellow_card">#F8DD6F</color>
     <color name="gray_button">#D9D9D9</color>
+    <color name="background_blue">#72CCEE</color>
+    <color name="yellow_ball">#FFD481</color>
+    <color name="blue_ball">#05b0f0</color>
 </resources>

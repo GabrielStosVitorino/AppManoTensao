@@ -46,7 +46,6 @@ class CadastroContatoCliente : AppCompatActivity() {
         val api = Apis.getApi()
         val chamada = api.postCliente(novoUsuario)
         chamada.enqueue(object : Callback<Cliente> {
-
             override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
                 val resposta = response.body()
                 if (resposta != null) {

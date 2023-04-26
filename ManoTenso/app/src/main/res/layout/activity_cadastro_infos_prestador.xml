@@ -105,12 +105,16 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_cnpj"
                     android:id="@+id/et_cnpj"
                     android:layout_marginLeft="36dp"
+                    android:inputType="text"
+                    app:mask="__.___.___/____-__"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
 
                 <TextView
@@ -126,12 +130,16 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_data_nascimento"
                     android:id="@+id/et_data_nascimento"
                     android:layout_marginLeft="36dp"
+                    android:inputType="text"
+                    app:mask="____-__-__"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
 
                 <TextView
@@ -153,6 +161,7 @@
                     android:layout_below="@id/tv_crie_senha"
                     android:id="@+id/et_crie_senha"
                     android:layout_marginLeft="36dp"
+                    android:password="true"
                     />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -173,41 +182,41 @@
                     style="?android:attr/borderlessButtonStyle"
                     />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="330dp"
-                    android:layout_height="46dp"
-                    android:text="@string/endereco"
-                    android:fontFamily="@font/montserrat"
-                    android:background="@drawable/custom_button_private"
-                    android:textSize="14sp"
-                    android:textFontWeight="300"
-                    android:id="@+id/btn_endereco"
-                    android:gravity="center"
-                    android:drawableStart="@drawable/ic_house_foreground"
-                    android:layout_below="@id/btn_contato"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="21dp"
-                    android:paddingRight="159dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    />
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="330dp"-->
+<!--                    android:layout_height="46dp"-->
+<!--                    android:text="@string/endereco"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:background="@drawable/custom_button_private"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textFontWeight="300"-->
+<!--                    android:id="@+id/btn_endereco"-->
+<!--                    android:gravity="center"-->
+<!--                    android:drawableStart="@drawable/ic_house_foreground"-->
+<!--                    android:layout_below="@id/btn_contato"-->
+<!--                    android:layout_marginLeft="13dp"-->
+<!--                    android:layout_marginTop="21dp"-->
+<!--                    android:paddingRight="159dp"-->
+<!--                    style="?android:attr/borderlessButtonStyle"-->
+<!--                    />-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="330dp"
-                    android:layout_height="46dp"
-                    android:text="@string/sobre_mim"
-                    android:fontFamily="@font/montserrat"
-                    android:background="@drawable/custom_button_private"
-                    android:textSize="14sp"
-                    android:textFontWeight="300"
-                    android:id="@+id/btn_sobre_mim"
-                    android:gravity="center"
-                    android:drawableStart="@drawable/ic_note_foreground"
-                    android:layout_below="@id/btn_endereco"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="21dp"
-                    android:paddingRight="159dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    />
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:layout_width="330dp"-->
+<!--                    android:layout_height="46dp"-->
+<!--                    android:text="@string/sobre_mim"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:background="@drawable/custom_button_private"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textFontWeight="300"-->
+<!--                    android:id="@+id/btn_sobre_mim"-->
+<!--                    android:gravity="center"-->
+<!--                    android:drawableStart="@drawable/ic_note_foreground"-->
+<!--                    android:layout_below="@id/btn_endereco"-->
+<!--                    android:layout_marginLeft="13dp"-->
+<!--                    android:layout_marginTop="21dp"-->
+<!--                    android:paddingRight="159dp"-->
+<!--                    style="?android:attr/borderlessButtonStyle"-->
+<!--                    />-->
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="135dp"
@@ -218,7 +227,7 @@
                     android:textSize="14sp"
                     android:textFontWeight="400"
                     android:id="@+id/btn_entrar"
-                    android:layout_below="@id/btn_sobre_mim"
+                    android:layout_below="@id/btn_contato"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="110dp"
                     android:layout_marginBottom="30dp"
