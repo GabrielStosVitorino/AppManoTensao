@@ -86,7 +86,9 @@
             android:drawableRight="@drawable/closeeye"
             android:hint="@string/senha_input"
             android:paddingLeft="32dp"
-            android:paddingRight="19dp" />
+            android:paddingRight="19dp"
+            android:password="true"
+            />
 
         <CheckBox
             android:layout_width="wrap_content"

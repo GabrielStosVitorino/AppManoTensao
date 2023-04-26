@@ -105,12 +105,16 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_cpf"
                     android:id="@+id/et_cpf"
                     android:layout_marginLeft="36dp"
+                    android:inputType="text"
+                    app:mask="___.___.___-__"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
 
                 <TextView
@@ -126,12 +130,16 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_data_nascimento"
                     android:id="@+id/et_data_nascimento"
                     android:layout_marginLeft="36dp"
+                    android:inputType="text"
+                    app:mask="____-__-__"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
 
                 <TextView

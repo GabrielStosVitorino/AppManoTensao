@@ -120,12 +120,16 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_cep"
                     android:id="@+id/et_cep"
                     android:layout_marginLeft="36dp"
+                    android:inputType="text"
+                    app:mask="_____-___"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
 
                 <TextView
@@ -225,7 +229,6 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="30dp"
-                    android:onClick="cadastrarCliente"
                     />
             </RelativeLayout>
         </ScrollView>

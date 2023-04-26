@@ -2,9 +2,7 @@ package com.example.manotenso
 
 import java.time.LocalDate
 
-data class Prestador(
-
-    val id: Int? = null,
+data class dadosPrestador(
     val nome: String? = null,
     val email :String,
     val senha: String,
@@ -17,9 +15,5 @@ data class Prestador(
     val numero: Int? = null,
     val complemento: String? = null,
     val autenticado: Int? = null,
-    val urlFoto: String? = null,
-    val cartaApresentacao: String? = null,
-    val linkWhatsapp: String? = null,
-    val fkServico: Servico? = null,
-    val fkPlano: Plano? = null
-)
+    val cartaApresentacao: String? = null
+) : java.io.Serializable

@@ -1,14 +1,16 @@
 package com.example.manotenso
 
+import java.time.LocalDate
+
 data class Cliente(
 
-    val idCliente: Int? = null,
+    val id: Int? = null,
     val nome: String? = null,
     val email: String?,
     val senha: String?,
     val telefone: String? = null,
     val cpf: String? = null,
-    val dtNascimento: String? = null,
+    val dtNascimento: LocalDate? = null,
     val cep: String? = null,
     val bairro: String? = null,
     val rua: String? = null,

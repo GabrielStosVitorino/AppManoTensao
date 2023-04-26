@@ -130,7 +130,7 @@
                     android:id="@+id/et_telefone"
                     android:layout_marginLeft="36dp"
                     android:inputType="text"
-                    app:mask="(__)_____-____"
+                    app:mask="(__) _____-____"
                     app:maskCharacter="_"
                     app:maskStyle="completable"
                     />
@@ -166,7 +166,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="30dp"
-                    android:onClick="cadastroEndereco"
+                    android:onClick="cadastrarCliente"
                     />
             </RelativeLayout>
         </ScrollView>

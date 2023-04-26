@@ -1,6 +1,7 @@
 package com.example.manotenso
 
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -21,7 +22,7 @@ interface Api {
     fun getClientes(): Call<List<Cliente>>
 
     @POST("/clientes")
-    fun postCliente(@Query("novoUsuario") novoUsuario: Cliente): Call<Cliente>
+    fun postCliente(@Body novoUsuario: Cliente): Call<Cliente>
 
     @DELETE("/clientes/{id}")
     fun deleteCliente(@Path("id") id: Int): Call<Void>
