@@ -23,7 +23,7 @@ class CadastroInfosCliente : AppCompatActivity() {
         val nascimento = binding.etDataNascimento.text.toString()
         val senha = binding.etCrieSenha.text.toString()
 
-        val dadosCliente = dadosCliente(nomeCompleto, cpf, nascimento, senha)
+        val dadosCliente = DadosCliente(nomeCompleto, cpf, nascimento, senha)
 
         val tela = Intent(applicationContext, CadastroContatoCliente::class.java)
 

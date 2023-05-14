@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/off_white">
+
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="48dp"
+                android:src="@drawable/arrowback"
+                android:id="@+id/iv_arrow_back"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_mano_home"
+                android:text="@string/mano"
+                android:fontFamily="@font/electricshocker"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textFontWeight="400"
+                android:layout_marginTop="22dp"/>
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_below="@+id/tv_mano_home"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/woman" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suzana"
+                android:id="@+id/tv_nome"
+                android:layout_below="@+id/iv_photo"
+                android:textSize="35sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_star"
+                android:src="@drawable/baseline_star"
+                android:layout_below="@+id/iv_photo"
+                android:layout_toRightOf="@id/tv_nome"
+                android:layout_marginLeft="147dp"
+                android:layout_alignBottom="@+id/tv_nome"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.97"
+                android:id="@+id/tv_nota"
+                android:layout_below="@+id/iv_star"
+                android:textSize="12sp"
+                android:layout_marginLeft="314dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/descricao"
+                android:id="@+id/tv_descricao"
+                android:layout_below="@+id/tv_nota"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:id="@+id/tv_perfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_descricao"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat augue non justo varius, non aliquam mauris molestie. In eget facilisis dolor. Nam efficitur ex at urna accumsan, vel maximus velit blandit. Suspendisse ornare mattis pharetra. Nunc commodo ex in massa faucibus, ut rhoncus leo faucibus. Pellentesque aliquam lorem ut ante molestie varius."
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atua"
+                android:id="@+id/tv_atua"
+                android:layout_below="@+id/tv_perfil"
+                android:textSize="12sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat"/>
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/iv_pintura"
+                android:src="@drawable/pincel"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/tv_atua"
+                android:layout_marginLeft="30dp"/>
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/iv_eletrica"
+                android:src="@drawable/eletrica"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/iv_pintura"
+                android:layout_below="@+id/tv_atua"
+                android:layout_marginLeft="4dp"/>
+
+            <ImageView
+                android:id="@+id/iv_heart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart"
+                android:layout_below="@id/tv_atua"
+                android:layout_toRightOf="@id/iv_eletrica"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="200dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="251dp"
+                android:layout_height="45dp"
+                android:text="@string/entre_contato"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textFontWeight="400"
+                android:background="@drawable/custom_button_whats"
+                android:drawableStart="@drawable/whatsapp"
+                android:id="@+id/btn_entre_contato"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="17dp"
+                android:layout_below="@+id/iv_pintura"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="23dp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

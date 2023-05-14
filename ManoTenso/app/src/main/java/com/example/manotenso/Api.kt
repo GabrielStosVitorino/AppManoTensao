@@ -22,7 +22,7 @@ interface Api {
     fun getClientes(): Call<List<Cliente>>
 
     @POST("/clientes")
-    fun postCliente(@Body novoUsuario: Cliente): Call<Cliente>
+    fun postCliente(@Body novoUsuario: DadosCliente): Call<Cliente>
 
     @DELETE("/clientes/{id}")
     fun deleteCliente(@Path("id") id: Int): Call<Void>

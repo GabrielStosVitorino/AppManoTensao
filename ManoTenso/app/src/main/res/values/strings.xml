@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ManoTensão</string>
-    <string name="mano">ManoTensão</string>
+    <string name="mano">ManoTensao</string>
     <string name="precisando">Precisando de uma mão?</string>
     <string name="ajuda">A gente te ajuda!</string>
     <string name="seta">➔</string>
@@ -72,10 +72,25 @@
     <string name="salvar">Salvar</string>
     <string name="e_prestador">É prestador?</string>
     <string name="bem_vindo_mano">Bem-vindo a </string>
-    <string name="manoTensao">ManoTensão!</string>
+    <string name="manoTensao">ManoTensao!</string>
     <string name="time">Agora você faz parte desse grande time</string>
     <string name="trabalho_prestador">Seus clientes estão lhe esperando!</string>
     <string name="trabalho_cliente">Nossos prestadores estão ansiosos para\ntrabalahrem junto com você</string>
+    <string name="select">Escolha um serviço</string>
+    <string name="ver">Ver mais</string>
+    <string name="descricao">Descrição:</string>
+    <string name="atua">Atua com</string>
+    <string name="avaliacoes">Avaliações</string>
+    <string name="entre_contato">Entre em contato</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_profile">Profile</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

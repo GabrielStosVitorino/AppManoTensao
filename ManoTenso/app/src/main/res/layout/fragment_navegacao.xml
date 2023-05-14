@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@color/off_white"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_line_menu"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:src="@drawable/lineprofile" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/lupa"
+            android:layout_below="@+id/iv_line_menu"
+            android:layout_marginTop="9dp"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:id="@+id/iv_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/heart"
+            android:layout_below="@+id/iv_line_menu"
+            android:layout_marginTop="9dp"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile"
+            android:layout_below="@+id/iv_line_menu"
+            android:layout_marginTop="9dp"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
