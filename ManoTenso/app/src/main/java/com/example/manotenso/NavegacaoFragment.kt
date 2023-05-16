@@ -21,5 +21,26 @@ class NavegacaoFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        chamadaFragment(HomeCliente(), "FRAGMENT_HOME")
+
+        binding.ivSearch.setOnClickListener {
+            chamadaFragment(HomeCliente(), "FRAGMENT_HOME")
+        }
+
+        binding.ivHeart.setOnClickListener {
+            chamadaFragment(LikeFragment(), "FRAGMENT_LIKE")
+        }
+
+        binding.ivProfile.setOnClickListener {
+            chamadaFragment(Perfil(), "FRAGMENT_PROFILE")
+        }
+
+    }
+
+    fun chamadaFragment(fragment: Fragment, tag: String) {
+        val transaction = activity?.supportFragmentManager?.beginTransaction()
+        transaction!!.replace(R.id.fragment_prest, fragment, tag)
+        transaction.commit()
     }
 }

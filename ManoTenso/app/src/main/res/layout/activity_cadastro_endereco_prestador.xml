@@ -120,13 +120,17 @@
                     android:textFontWeight="400"
                     android:textColor="@color/black"/>
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
+                    android:id="@+id/et_cep"
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_cep"
-                    android:id="@+id/et_cep"
                     android:layout_marginLeft="36dp"
-                    />
+                    android:layout_marginTop="-2dp"
+                    android:inputType="number"
+                    app:mask="_____-___"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -149,32 +153,12 @@
                     android:layout_marginLeft="36dp"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/logradouro"
-                    android:layout_below="@id/et_bairro"
-                    android:id="@+id/tv_logradouro"
-                    android:layout_marginTop="19dp"
-                    android:layout_marginLeft="46dp"
-                    android:fontFamily="@font/montserrat"
-                    android:textSize="14sp"
-                    android:textFontWeight="400"
-                    android:textColor="@color/black"/>
-
-                <EditText
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_logradouro"
-                    android:id="@+id/et_logradouro"
-                    android:layout_marginLeft="36dp"
-                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/numero"
-                    android:layout_below="@id/et_logradouro"
+                    android:layout_below="@id/et_bairro"
                     android:id="@+id/tv_numero"
                     android:layout_marginTop="19dp"
                     android:layout_marginLeft="46dp"
@@ -189,6 +173,7 @@
                     android:layout_below="@id/tv_numero"
                     android:id="@+id/et_numero"
                     android:layout_marginLeft="36dp"
+                    android:inputType="number"
                     />
 
                 <TextView

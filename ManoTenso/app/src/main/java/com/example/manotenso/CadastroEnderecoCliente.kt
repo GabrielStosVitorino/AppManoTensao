@@ -32,8 +32,6 @@ class CadastroEnderecoCliente : AppCompatActivity() {
         dadosCliente.numero = numero
         dadosCliente.complemento = complemento
 
-        println(dadosCliente)
-
         val api = Apis.getApi()
         val chamada = api.postCliente(dadosCliente)
         chamada.enqueue(object : Callback<Cliente> {

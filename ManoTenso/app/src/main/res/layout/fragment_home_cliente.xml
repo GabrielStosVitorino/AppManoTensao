@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    tools:context=".HomeCliente">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/off_white">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_mano_home"
-            android:text="@string/mano"
-            android:fontFamily="@font/electricshocker"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textFontWeight="400"
-            android:layout_marginTop="22dp"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sc_servicos"
-            android:layout_marginTop="17dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:layout_below="@+id/tv_mano_home"
             app:hintTextColor="@color/black"
             android:hint="@string/select"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -39,126 +28,10 @@
                 android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sc_servicos"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            >
-
-            <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:id="@+id/iv_woman"
-                android:src="@mipmap/woman"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_name"
-                android:text="Suzana"
-                android:textSize="20sp"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:layout_toRightOf="@+id/iv_woman"
-                android:layout_marginLeft="13dp"/>
-
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:id="@+id/iv_star"
-                android:src="@drawable/baseline_star"
-                android:layout_marginTop="4dp"
-                android:layout_toRightOf="@+id/iv_woman"
-                android:layout_below="@+id/tv_name"
-                android:layout_marginLeft="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_avaliacao"
-                android:text="4.93"
-                android:textSize="13sp"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@color/black"
-                android:layout_marginTop="1dp"
-                android:layout_toRightOf="@+id/iv_star"
-                android:layout_marginLeft="4dp"
-                android:layout_below="@+id/tv_name"/>
-
-            <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:id="@+id/iv_loction"
-                android:src="@drawable/baseline_location"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/iv_woman"
-                android:layout_below="@+id/iv_star"
-                android:layout_marginLeft="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_pintura"
-                android:text="1.12km"
-                android:fontFamily="@font/montserrat"
-                android:textSize="13sp"
-                android:textColor="@color/black"
-                android:layout_toRightOf="@+id/iv_star"
-                android:layout_marginLeft="4dp"
-                android:layout_below="@+id/tv_avaliacao"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/iv_pintura"
-                android:src="@drawable/pincel"
-                android:layout_marginTop="23dp"
-                android:layout_toRightOf="@+id/iv_woman"
-                android:layout_below="@+id/iv_loction"
-                android:layout_marginLeft="13dp"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/iv_eletrica"
-                android:src="@drawable/eletrica"
-                android:layout_marginTop="23dp"
-                android:layout_toRightOf="@+id/iv_pintura"
-                android:layout_below="@+id/iv_loction"
-                android:layout_marginLeft="4dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="75dp"
-                android:layout_height="21dp"
-                android:text="@string/ver"
-                android:fontFamily="@font/montserrat"
-                android:background="@drawable/custom_button_continue"
-                android:textColor="@color/black"
-                android:textSize="9sp"
-                android:textFontWeight="400"
-                android:id="@+id/btn_ver"
-                android:layout_toRightOf="@+id/tv_name"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="65dp"
-                />
-
-        </RelativeLayout>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_tela"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"/>
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_prestador"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
-
+            android:layout_height="match_parent"
+            android:layout_below="@+id/sc_servicos" />
     </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

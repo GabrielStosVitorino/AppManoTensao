@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class CadastroContatoPrestador : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroContatoPrestadorBinding
-    lateinit var dadosPrestador: dadosPrestador
+    lateinit var dadosPrestador: DadosPrestador
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,55 +21,17 @@ class CadastroContatoPrestador : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun cadastrarPrestador(componente: View){
-        val dadosPrestador = intent.getSerializableExtra("dadosPrestadores") as dadosPrestador
-
-        val email = binding.etEmail.text.toString()
-        val telefone = binding.etTelefone.text.toString()
-
-        val novoUsuario = Prestador (
-            nome = dadosPrestador.nome,
-            cpf = dadosPrestador.cnpj,
-            dtNascimento = dadosPrestador.dtNascimento,
-            senha = dadosPrestador.senha,
-            email = email,
-            telefone = telefone
-        )
-
-        val tela = Intent(applicationContext, CadastroPrestadorConcluido::class.java)
-
-        val api = Apis.getApi()
-        val chamada = api.postPrestador(novoUsuario)
-        chamada.enqueue(object : Callback<Prestador> {
-        override fun onResponse(call: Call<Prestador>, response: Response<Prestador>) {
-                val resposta = response.body()
-                if (resposta != null) {
-                    startActivity(tela)
-                } else {
-                    println("Segundo else cliente")
-                    println(resposta)
-                    println(novoUsuario)
-                }
-            }
-
-            override fun onFailure(call: Call<Prestador>, t: Throwable) {
-                Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                    Toast.LENGTH_SHORT).show()
-                t.printStackTrace()
-            }
-        })
-    }
-
     fun cadastroEnderecoPrestador(componente: View) {
+        val dadosPrestador = intent.getSerializableExtra("dadosPrestadores") as DadosPrestador
 
-        val email = binding.etEmail.text.toString()
-        val telefone = binding.etTelefone.text.toString()
+        val email = findViewById<EditText>(R.id.et_email).text.toString()
+        val telefone = findViewById<EditText>(R.id.et_telefone).text.toString()
 
-        val dadosPrestadores = dadosPrestador(email, telefone)
+        dadosPrestador.email = email
+        dadosPrestador.telefone = telefone
 
         val tela = Intent(applicationContext, CadastroEnderecoPrestador::class.java)
-        tela.putExtra("dadosCliente", dadosPrestadores)
-        println(dadosPrestadores)
+        tela.putExtra("dadosPrestadores", dadosPrestador)
         startActivity(tela)
     }
 }

@@ -20,9 +20,7 @@ class CadastroContatoCliente : AppCompatActivity() {
         val dadosCliente = intent.getSerializableExtra("dadosCliente") as DadosCliente
 
         val email = findViewById<EditText>(R.id.et_email).text.toString()
-        println(email)
         val telefone = findViewById<EditText>(R.id.et_telefone).text.toString()
-        println(telefone)
 
         dadosCliente.email = email
         dadosCliente.telefone = telefone

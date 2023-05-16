@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.manotenso.databinding.FragmentLikeBinding
+import com.example.manotenso.databinding.FragmentPerfilBinding
 
-class LikeFragment : Fragment() {
+class Perfil : Fragment() {
 
     private val binding by lazy {
-        FragmentLikeBinding.inflate(layoutInflater)
+        FragmentPerfilBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(

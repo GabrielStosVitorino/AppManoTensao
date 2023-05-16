@@ -5,7 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import com.example.manotenso.databinding.ActivityCadastroEnderecoPrestadorBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CadastroEnderecoPrestador : AppCompatActivity() {
 
@@ -16,28 +20,22 @@ class CadastroEnderecoPrestador : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    fun recuperarDados() {
-        val dadosPrestadorr = intent.getSerializableExtra("dadosPrestadores") as dadosPrestador
-        dadosPrestadorr.nome
-        dadosPrestadorr.cnpj
-        dadosPrestadorr.dtNascimento
-        dadosPrestadorr.senha
-        dadosPrestadorr.email
-        dadosPrestadorr.telefone
-    }
-
     fun cadastroSobreMim(componente: View) {
+        val dadosPrestador = intent.getSerializableExtra("dadosPrestadores") as DadosPrestador
 
-        val cep = binding.etCep.text.toString()
-        val bairro = binding.etBairro.text.toString()
-        val logradouro = binding.etLogradouro.text.toString()
-        val numero = binding.etNumero.text.toString()
-        val complemento = binding.etComplemento.text.toString()
+        val cep = findViewById<EditText>(R.id.et_cep).text.toString()
+        val bairro = findViewById<EditText>(R.id.et_bairro).text.toString()
+        val numero = findViewById<EditText>(R.id.et_numero).text.toString().toInt()
+        val complemento = findViewById<EditText>(R.id.et_complemento).text.toString()
 
-        val dadosPrestadores = dadosPrestador(cep, bairro, logradouro, numero, complemento)
-        println(dadosPrestadores)
+        dadosPrestador.cep = cep
+        dadosPrestador.bairro = bairro
+        dadosPrestador.numero = numero
+        dadosPrestador.complemento = complemento
+
+
         val tela = Intent(applicationContext, CadastroSobreMimPrestador::class.java)
-        tela.putExtra("dadosCliente", dadosPrestadores)
+        tela.putExtra("dadosPrestadores", dadosPrestador)
         startActivity(tela)
     }
 }

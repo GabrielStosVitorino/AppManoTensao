@@ -147,7 +147,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="80dp"
                     android:layout_marginBottom="30dp"
-                    android:onClick="cadastroConcluidoPrestador"
+                    android:onClick="cadastrarPrestador"
                     />
 
             </RelativeLayout>

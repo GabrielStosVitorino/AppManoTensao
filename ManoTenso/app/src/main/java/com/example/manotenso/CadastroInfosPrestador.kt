@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.manotenso.databinding.ActivityCadastroInfosClienteBinding
 import com.example.manotenso.databinding.ActivityCadastroInfosPrestadorBinding
 
 class CadastroInfosPrestador : AppCompatActivity() {
@@ -22,11 +21,10 @@ class CadastroInfosPrestador : AppCompatActivity() {
         val nascimento = binding.etDataNascimento.text.toString()
         val senha = binding.etCrieSenha.text.toString()
 
-        val dadosPrestadores = dadosPrestador(nomeCompleto, cnpj, nascimento, senha)
+        val dadosPrestador = DadosPrestador(nomeCompleto, cnpj, nascimento, senha)
 
         val tela = Intent(applicationContext, CadastroContatoPrestador::class.java)
-        tela.putExtra("dadosPrestadores", dadosPrestadores)
-        println(dadosPrestadores)
+        tela.putExtra("dadosPrestadores", dadosPrestador)
         startActivity(tela)
     }
 }

@@ -16,7 +16,7 @@ class CadastroPrestador : AppCompatActivity() {
     }
 
     fun cadastrarPrestador(){
-        val novoUsuario = Prestador (
+        val novoUsuario = DadosPrestador (
             email = "gabriel@bandtec.com.br",
             senha = "verdão"
         )

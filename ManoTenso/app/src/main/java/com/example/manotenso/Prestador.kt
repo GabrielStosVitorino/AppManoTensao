@@ -4,7 +4,7 @@ data class Prestador(
 
     val id: Int? = null,
     val nome: String? = null,
-    val email :String,
+    val email :String? = null,
     val senha: String? = null,
     val telefone: String? = null,
     val cpf: String? = null,
