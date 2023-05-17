@@ -152,7 +152,7 @@
                 android:textFontWeight="400"
                 android:background="@drawable/custom_button_whats"
                 android:drawableStart="@drawable/whatsapp"
-                android:id="@+id/btn_entre_contato"
+                android:id="@+id/btn_whats"
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="17dp"
                 android:layout_below="@+id/iv_pintura"

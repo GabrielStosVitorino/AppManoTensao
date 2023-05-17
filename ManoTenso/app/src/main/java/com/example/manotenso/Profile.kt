@@ -1,13 +1,11 @@
 package com.example.manotenso
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.manotenso.databinding.ActivityProfileBinding
 
 class Profile : AppCompatActivity() {
@@ -26,5 +24,15 @@ class Profile : AppCompatActivity() {
         btnVoltar.setOnClickListener {
             onBackPressed()
         }
+        val whats = findViewById<Button>(R.id.btn_whats)
+        whats.setOnClickListener {
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+            sendIntent.type = "text/plain"
+            sendIntent.setPackage("com.whatsapp")
+            startActivity(sendIntent)
+        }
     }
 }
+
