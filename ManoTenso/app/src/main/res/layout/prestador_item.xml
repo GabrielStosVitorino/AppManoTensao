@@ -15,10 +15,20 @@
         android:background="@drawable/custom_image"
         android:id="@+id/celula_prestador">
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="-55dp"
+            android:layout_marginLeft="40dp"
+            app:lottie_rawRes="@raw/heart"
+            android:elevation="8dp"/>
+
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:id="@+id/iv_prestador"/>
+            android:id="@+id/iv_prestador"
+            android:src="@mipmap/woman"/>
 
         <TextView
             android:layout_width="wrap_content"

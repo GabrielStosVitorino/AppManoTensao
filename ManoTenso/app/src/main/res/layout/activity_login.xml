@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_mano"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="149dp"
+            android:layout_marginTop="109dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/bem_vindo"
             android:textColor="#000000"
@@ -102,6 +102,20 @@
             android:textColor="@color/black"
             />
 
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceito os termos da LGPD"
+            android:textSize="14sp"
+            android:layout_below="@id/cb_e_prestador"
+            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:textFontWeight="400"
+            android:id="@+id/cb_lgpd"
+            android:textColor="@color/black"
+            />
+
         <TextView
             android:id="@+id/tv_esqueci_senha"
             android:layout_width="wrap_content"
@@ -121,7 +135,7 @@
             android:layout_height="40dp"
             android:layout_below="@id/tv_esqueci_senha"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp"
+            android:layout_marginTop="87dp"
             android:background="@drawable/custom_buttom_enter"
             android:text="@string/entrar"
             android:textFontWeight="600"
@@ -135,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_entrar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/montserrat"
             android:text="@string/nao_tenho_cadastro"
             android:textColor="#000000"

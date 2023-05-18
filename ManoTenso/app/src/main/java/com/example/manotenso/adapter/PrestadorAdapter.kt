@@ -1,7 +1,5 @@
 package com.example.manotenso.adapter
 
-import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +7,18 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.manotenso.Prestador
 import com.example.manotenso.R
 import com.squareup.picasso.Picasso
-import java.util.Objects
+import java.util.*
 
 class PrestadorAdapter(val listaPrestador: MutableList<Prestador>,
-                       private val onclick: (id: Int) -> Unit
-)
+                       private val onclick: (id: Int) -> Unit)
     : RecyclerView.Adapter<PrestadorAdapter.PrestadorViewHolder>() {
+
+    private var btnltke:kotlin.Boolean = false
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -36,12 +37,13 @@ class PrestadorAdapter(val listaPrestador: MutableList<Prestador>,
     override fun getItemCount(): Int {
         return listaPrestador.size
     }
-
     inner class PrestadorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun vincular(prestador : Prestador) {
             val nomePrestador = itemView.findViewById<TextView>(R.id.tv_name)
             val fotoPrestador = itemView.findViewById<ImageView>(R.id.iv_prestador)
             val celulaPrestador = itemView.findViewById<RelativeLayout>(R.id.celula_prestador)
+            var lottie = itemView.findViewById<LottieAnimationView>(R.id.animationView)
 
            nomePrestador.text = prestador.nome
 
@@ -58,8 +60,16 @@ class PrestadorAdapter(val listaPrestador: MutableList<Prestador>,
 
                 onclick(prestador.id!!)
             }
+            lottie.setOnClickListener(View.OnClickListener {
+                if (btnltke) {
+                    lottie.playAnimation()
+                    btnltke = false
+                } else {
+                    lottie.reverseAnimationSpeed()
+                    btnltke = true
+                }
+
+            })
         }
-
-
     }
 }
