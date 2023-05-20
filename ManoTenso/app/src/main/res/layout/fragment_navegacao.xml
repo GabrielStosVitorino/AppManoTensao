@@ -30,7 +30,7 @@
             android:id="@+id/iv_heart"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/heart"
+            android:src="@drawable/star"
             android:layout_below="@+id/iv_line_menu"
             android:layout_marginTop="9dp"
             android:layout_centerHorizontal="true"/>
