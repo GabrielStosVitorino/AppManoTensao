@@ -28,7 +28,7 @@ interface Api {
     fun deleteCliente(@Path("id") id: Int): Call<Void>
 
     @PUT("/clientes/{id}")
-    fun putCliente(@Path("idCliente") id: Int, @Query("cliente") cliente: Cliente): Call<Cliente>
+    fun putCliente(@Path("idCliente") id: Int, @Body cliente: Cliente): Call<Cliente>
 
     fun lerArquivoTxtCliente(@Query("nomeArq") nomeArq: String): Call<CartaApresentacao>
 
@@ -122,5 +122,14 @@ interface Api {
 
     @PUT("/planos/{id}")
     fun putPlanos(@Path("id") id: Int, plano: Plano): Call<Plano>
+
+    //                             AVALIACAO PRESTADOR
+
+    @GET("/avaliacoes-prestadores/melhores")
+    fun getFiltroAvaliacao(): Call<List<FiltroPorAvaliacao>>
+
+    @GET("/avaliacoes-prestadores//melhores-por-servico/{idServico}/{segundaVariacao}/{terceiraVariacao}/{quartaVariacao}")
+    fun getFiltroAvaliacaoPorServico(@Path("idServico") idServico: Int, @Path("segundaVariacao") segundaVariacao: Int,
+                                     @Path("terceiraVariacao") terceiraVariacao: Int, @Path("quartaVariacao") quartaVariacao: Int) : Call<List<FiltroPorAvaliacao>>
 
 }
