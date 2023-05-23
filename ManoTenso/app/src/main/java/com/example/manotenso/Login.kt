@@ -144,7 +144,7 @@ class Login : AppCompatActivity() {
         val lgpd = findViewById<CheckBox>(R.id.cb_lgpd).isChecked
         val api = Apis.getApi()
 
-        if (lgpd) {
+
             saveConsentStatus(true)
             if(!checkBox){
                 val chamada = api.loginCliente(email, senha)
@@ -154,7 +154,9 @@ class Login : AppCompatActivity() {
                     override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
                         val resposta = response.body()
                         if (resposta != null) {
-                            goToHome()
+                            SessaoUsuario.cliente = resposta
+                            val telaLoginCliente = Intent(applicationContext, Home::class.java)
+                            startActivity(telaLoginCliente)
                         } else {
                             println("segundo else cliente")
                             println(resposta)
@@ -175,6 +177,7 @@ class Login : AppCompatActivity() {
                     override fun onResponse(call: Call<Prestador>, response: Response<Prestador>) {
                         val resposta = response.body()
                         if (resposta != null) {
+                            SessaoUsuario.prestador = resposta
                             goToHomePrestador()
                         } else {
                             println("segundo else prestador")
@@ -189,10 +192,6 @@ class Login : AppCompatActivity() {
                     }
                 })
             }
-        } else {
-            saveConsentStatus(false)
-            Toast.makeText(this, "Você não aceitou os termos da LGPD.", Toast.LENGTH_SHORT).show()
-        }
 
     }
 

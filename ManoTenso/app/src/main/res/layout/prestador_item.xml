@@ -15,15 +15,6 @@
         android:background="@drawable/custom_image"
         android:id="@+id/celula_prestador">
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="-55dp"
-            android:layout_marginLeft="40dp"
-            app:lottie_rawRes="@raw/heart"
-            android:elevation="8dp"/>
-
         <ImageView
             android:layout_width="140dp"
             android:layout_height="140dp"
@@ -93,7 +84,7 @@
             android:id="@+id/iv_pintura"
             android:layout_marginTop="23dp"
             android:layout_toRightOf="@+id/iv_prestador"
-            android:layout_below="@+id/iv_loction"
+            android:layout_below="@+id/tv_location"
             android:src="@drawable/pincel"
             android:layout_marginLeft="13dp"/>
 
@@ -103,7 +94,7 @@
             android:id="@+id/iv_eletrica"
             android:layout_marginTop="23dp"
             android:layout_toRightOf="@+id/iv_pintura"
-            android:layout_below="@+id/iv_loction"
+            android:layout_below="@+id/tv_location"
             android:src="@drawable/eletrica"
             android:layout_marginLeft="4dp"/>
 

@@ -39,6 +39,7 @@ class CadastroEnderecoCliente : AppCompatActivity() {
             override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
                 val resposta = response.body()
                 if (resposta != null) {
+                    SessaoUsuario.cliente = resposta
                     val tela = Intent(applicationContext, CadastroClienteConcluido::class.java)
                     startActivity(tela)
                 } else {

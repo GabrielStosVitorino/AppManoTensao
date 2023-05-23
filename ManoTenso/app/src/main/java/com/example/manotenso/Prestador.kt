@@ -20,4 +20,8 @@ data class Prestador(
     val linkWhatsapp: String? = null,
     val fkServico: Servico? = null,
     val fkPlano: Plano? = null
-)
+) {
+    fun getEnderecoCompleto(): String {
+        return "$rua $numero $bairro"
+    }
+}

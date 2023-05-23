@@ -17,4 +17,8 @@ data class Cliente(
     val autenticado: Int? = null,
     val urlFoto: String? = null,
     val cartaApresentacao: String? = null
-)
+) {
+    fun getEnderecoCompleto(): String {
+        return "$rua $numero $bairro"
+    }
+}
