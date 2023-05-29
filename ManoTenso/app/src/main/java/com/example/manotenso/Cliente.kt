@@ -3,7 +3,7 @@ package com.example.manotenso
 data class Cliente(
 
     val idCliente: Int? = null,
-    val nome: String? = null,
+    var nome: String? = null,
     val email: String?,
     val senha: String?,
     val telefone: String? = null,

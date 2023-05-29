@@ -48,7 +48,7 @@ class Login : AppCompatActivity() {
 
     }
 
-    private fun goToSignIn() {
+     fun goToSignIn() {
         val signInIntent = gsc.signInIntent
         startActivityForResult(signInIntent, 1000)
     }
@@ -61,75 +61,82 @@ class Login : AppCompatActivity() {
         val lgpd = findViewById<CheckBox>(R.id.cb_lgpd).isChecked
         val api = Apis.getApi()
 
-        if (lgpd) {
-            saveConsentStatus(true)
-            if (!checkBox) {
-                val chamada = api.loginCliente(email, senha)
-                chamada.enqueue(object : Callback<Cliente> {
-                    override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
-                        if (requestCode == 1000) {
-                            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-                            try {
-                                task.getResult(ApiException::class.java)
-                                goToHome()
-
-                            } catch (e:java.lang.Exception) {
-
-                            }
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Cliente>, t: Throwable) {
-                        Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                            Toast.LENGTH_SHORT).show()
-                        t.printStackTrace()
-                    }
-                })
-            } else if(checkBox){
-                val chamada = api.loginPrestador(email, senha)
-
-                chamada.enqueue(object : Callback<Prestador> {
-
-                    override fun onResponse(call: Call<Prestador>, response: Response<Prestador>) {
-                        if (requestCode == 1000) {
-                            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-                            try {
-                                task.getResult(ApiException::class.java)
-                                goToHomePrestador()
-
-                            } catch (e:java.lang.Exception) {
-
-                            }
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Prestador>, t: Throwable) {
-                        Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                            Toast.LENGTH_SHORT).show()
-                        t.printStackTrace()
-                    }
-                })
-            }
-        } else {
-            saveConsentStatus(false)
-            Toast.makeText(this, "Você não aceitou os termos da LGPD.", Toast.LENGTH_SHORT).show()
-        }
-
-//        if (requestCode == 1000) {
-//            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            try {
-//                task.getResult(ApiException::class.java)
-//                goToHome()
+//        if (lgpd) {
+//            saveConsentStatus(true)
+//            if (!checkBox) {
+//                val chamada = api.loginCliente(email, senha)
+//                chamada.enqueue(object : Callback<Cliente> {
+//                    override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
+//                        if (requestCode == 1000) {
+//                            val task: Task<GoogleSignInAccount> =
+//                                GoogleSignIn.getSignedInAccountFromIntent(data)
+//                            try {
+//                                task.getResult(ApiException::class.java)
+//                                goToHome()
 //
-//            } catch (e:java.lang.Exception) {
-//                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+//                            } catch (e: java.lang.Exception) {
+//
+//                            }
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<Cliente>, t: Throwable) {
+//                        Toast.makeText(
+//                            baseContext, "Erro na API: ${t.message}",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                        t.printStackTrace()
+//                    }
+//                })
+//            } else if (checkBox) {
+//                val chamada = api.loginPrestador(email, senha)
+//
+//                chamada.enqueue(object : Callback<Prestador> {
+//
+//                    override fun onResponse(call: Call<Prestador>, response: Response<Prestador>) {
+//                        if (requestCode == 1000) {
+//                            val task: Task<GoogleSignInAccount> =
+//                                GoogleSignIn.getSignedInAccountFromIntent(data)
+//                            try {
+//                                task.getResult(ApiException::class.java)
+//                                goToHomePrestador()
+//
+//                            } catch (e: java.lang.Exception) {
+//
+//                            }
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<Prestador>, t: Throwable) {
+//                        Toast.makeText(
+//                            baseContext, "Erro na API: ${t.message}",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                        t.printStackTrace()
+//                    }
+//                })
 //            }
+//        } else {
+//            saveConsentStatus(false)
+//            Toast.makeText(this, "Você não aceitou os termos da LGPD.", Toast.LENGTH_SHORT).show()
 //        }
+
+        if (requestCode == 1000) {
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                task.getResult(ApiException::class.java)
+                goToHome()
+
+            } catch (e:java.lang.Exception) {
+                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
-    private fun goToHome() {
-        val telaLoginCliente = Intent(applicationContext, HomeCliente::class.java)
+     fun goToHome() {
+        val telaLoginCliente = Intent(applicationContext, Home::class.java)
         startActivity(telaLoginCliente)
+        finish()
     }
 
     private fun goToHomePrestador() {
@@ -137,7 +144,7 @@ class Login : AppCompatActivity() {
         startActivity(telaLoginPrestador)
     }
 
-    fun logar(componente: View){
+    fun logar(componente: View) {
         val email = findViewById<EditText>(R.id.et_input_email).text.toString()
         val senha = findViewById<EditText>(R.id.et_input_senha).text.toString()
         val checkBox = findViewById<CheckBox>(R.id.cb_e_prestador).isChecked()
@@ -145,8 +152,9 @@ class Login : AppCompatActivity() {
         val api = Apis.getApi()
 
 
+        if (lgpd) {
             saveConsentStatus(true)
-            if(!checkBox){
+            if (!checkBox) {
                 val chamada = api.loginCliente(email, senha)
 
                 chamada.enqueue(object : Callback<Cliente> {
@@ -157,6 +165,7 @@ class Login : AppCompatActivity() {
                             SessaoUsuario.cliente = resposta
                             val telaLoginCliente = Intent(applicationContext, Home::class.java)
                             startActivity(telaLoginCliente)
+                            finish()
                         } else {
                             println("segundo else cliente")
                             println(resposta)
@@ -164,12 +173,14 @@ class Login : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<Cliente>, t: Throwable) {
-                        Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            baseContext, "Erro na API: ${t.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         t.printStackTrace()
                     }
                 })
-            } else if(checkBox){
+            } else if (checkBox) {
                 val chamada = api.loginPrestador(email, senha)
 
                 chamada.enqueue(object : Callback<Prestador> {
@@ -186,12 +197,19 @@ class Login : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<Prestador>, t: Throwable) {
-                        Toast.makeText(baseContext, "Erro na API: ${t.message}",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            baseContext, "Erro na API: ${t.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         t.printStackTrace()
                     }
                 })
             }
+        } else {
+            saveConsentStatus(false)
+            Toast.makeText(this, "Você não aceitou os termos da LGPD.", Toast.LENGTH_SHORT)
+                .show()
+        }
 
     }
 

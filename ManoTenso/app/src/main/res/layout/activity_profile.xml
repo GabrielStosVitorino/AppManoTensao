@@ -46,9 +46,10 @@
                 android:src="@mipmap/woman" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:text="Suzana"
+                android:layout_marginTop="10dp"
                 android:id="@+id/tv_nome"
                 android:layout_below="@+id/iv_photo"
                 android:textSize="35sp"
@@ -56,35 +57,42 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/iv_star"
-                android:src="@drawable/baseline_star"
-                android:layout_below="@+id/iv_photo"
-                android:layout_toRightOf="@id/tv_nome"
-                android:layout_marginLeft="147dp"
-                android:layout_alignBottom="@+id/tv_nome"/>
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.97"
-                android:id="@+id/tv_nota"
-                android:layout_below="@+id/iv_star"
-                android:textSize="12sp"
+                android:id="@+id/ll_stars"
+                android:layout_below="@+id/iv_photo"
                 android:layout_marginLeft="314dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat"/>
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/iv_star"
+                    android:src="@drawable/baseline_star"
+                    android:layout_alignBottom="@+id/tv_nome"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.97"
+                    android:id="@+id/tv_nota"
+                    android:layout_below="@+id/iv_star"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/montserrat"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/descricao"
                 android:id="@+id/tv_descricao"
-                android:layout_below="@+id/tv_nota"
+                android:layout_below="@+id/tv_nome"
                 android:textSize="17sp"
                 android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"/>
 
@@ -130,17 +138,6 @@
                 android:layout_toRightOf="@+id/iv_pintura"
                 android:layout_below="@+id/tv_atua"
                 android:layout_marginLeft="4dp"/>
-
-            <ImageView
-                android:id="@+id/iv_heart"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/heart"
-                android:layout_below="@id/tv_atua"
-                android:layout_toRightOf="@id/iv_eletrica"
-                android:layout_marginTop="13dp"
-                android:layout_marginLeft="200dp"
-                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="251dp"

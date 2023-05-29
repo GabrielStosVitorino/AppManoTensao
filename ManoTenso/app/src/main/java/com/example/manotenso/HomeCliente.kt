@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,24 +27,6 @@ class HomeCliente : Fragment() {
     }
 
     private val listaPrestador = mutableListOf<Prestador>()
-
-    var items = arrayOf("Pintura", "Elétrica", "Hidráulica")
-    var adapterItems: ArrayAdapter<String>? = null
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.fragment_home_cliente)
-//
-//        var autoCompleteTxt = binding.autoCompleteTxt
-//
-//        adapterItems = ArrayAdapter(this, R.layout.list_item, items)
-//        autoCompleteTxt.setAdapter(adapterItems)
-//
-//        autoCompleteTxt.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
-//            val item = parent.getItemAtPosition(position).toString()
-//            Toast.makeText(context, "Item: $item", Toast.LENGTH_SHORT).show()
-//        })
-//    }
 
     fun carregarListaApi() {
 
@@ -81,11 +61,22 @@ class HomeCliente : Fragment() {
         return binding.root
     }
 
+    private fun buscarPrestadorPorId(id: Int): Prestador? {
+        return listaPrestador.find { prestador -> prestador.id == id }
+    }
+
+
     // pode jogar pra uma tela
     fun exibeToast(id: Int) {
-        val tela = Intent(context, Profile::class.java)
-        tela.putExtra("id", id)
-        startActivity(tela)
+        val prestador = buscarPrestadorPorId(id)
+        if (prestador != null) {
+            val tela = Intent(context, Profile::class.java)
+            tela.putExtra("prestadorNome", prestador.nome)
+            tela.putExtra("prestadorDescricao", prestador.cartaApresentacao)
+            tela.putExtra("prestadorFoto", prestador.urlFoto)
+            tela.putExtra("prestadorLinkWhatsapp", prestador.linkWhatsapp)
+            startActivity(tela)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -105,73 +96,6 @@ class HomeCliente : Fragment() {
 
         carregarListaApi()
 
-//        listaPrestador.addAll(
-//            mutableListOf<Prestador>(
-//                Prestador(
-//                    90,
-//                    "bbbbbb",
-//                    "test_4adc793856a0",
-//                    "test_391fcf7fbe38",
-//                    "test_dfb2652c1631",
-//                    "test_04415e26cc80",
-//                    "test_faded3f6ae03",
-//                    "test_25f53c48b72f",
-//                    "test_82474453f9d1",
-//                    "test_0639b4e15137",
-//                    49,
-//                    "test_1272d47a2806",
-//                    76,
-//                    "https://img.freepik.com/fotos-gratis/empresaria-confiante-sorridente-posando-com-os-bracos-cruzados_1262-20950.jpg?size=626&ext=jpg&ga=GA1.2.1225098191.1683057949&semt=sph",
-//                    "test_1e62aab4e3a3",
-//                    "test_dfd259219973",
-//                    null,
-//                    null
-//                ),
-//                Prestador(
-//                    91,
-//                    "aaaaaaa",
-//                    "test_4adc793856a0",
-//                    "test_391fcf7fbe38",
-//                    "test_dfb2652c1631",
-//                    "test_04415e26cc80",
-//                    "test_faded3f6ae03",
-//                    "test_25f53c48b72f",
-//                    "test_82474453f9d1",
-//                    "test_0639b4e15137",
-//                    49,
-//                    "test_1272d47a2806",
-//                    76,
-//                    null,
-//                    "test_1e62aab4e3a3",
-//                    "test_dfd259219973",
-//                    null,
-//                    null
-//                ),
-//                Prestador(
-//                    92,
-//                    "cccccccccc",
-//                    "test_4adc793856a0",
-//                    "test_391fcf7fbe38",
-//                    "test_dfb2652c1631",
-//                    "test_04415e26cc80",
-//                    "test_faded3f6ae03",
-//                    "test_25f53c48b72f",
-//                    "test_82474453f9d1",
-//                    "test_0639b4e15137",
-//                    49,
-//                    "test_1272d47a2806",
-//                    76,
-//                    null,
-//                    "test_1e62aab4e3a3",
-//                    "test_dfd259219973",
-//                    null,
-//                    null
-//                )
-//            )
-//        )
-
         prestadorAdapter.notifyDataSetChanged()
-
-
     }
 }
