@@ -12,7 +12,7 @@ class CadastroPrestadorConcluido : AppCompatActivity() {
     }
 
     fun homePrestador(componente: View) {
-        val tela = Intent(applicationContext, HomePrestador::class.java)
+        val tela = Intent(applicationContext, Home::class.java)
         startActivity(tela)
     }
 }

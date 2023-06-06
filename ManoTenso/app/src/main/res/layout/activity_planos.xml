@@ -159,7 +159,8 @@
                         android:text="@string/assinar"
                         android:textColor="@color/white"
                         android:textFontWeight="700"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:onClick="basico"/>
 
                 </RelativeLayout>
 
@@ -262,7 +263,8 @@
                         android:fontFamily="@font/montserrat"
                         android:text="@string/assinar"
                         android:textFontWeight="700"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:onClick="premium"/>
 
                 </RelativeLayout>
 
@@ -351,7 +353,8 @@
                         android:text="@string/assinar"
                         android:textColor="@color/white"
                         android:textFontWeight="700"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:onClick="pro"/>
 
                 </RelativeLayout>
             </LinearLayout>

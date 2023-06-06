@@ -96,7 +96,7 @@ interface Api {
     //                                 SERVICO
 
     @GET("/servicos")
-    fun getServico(): Call<List<Servico>>
+    fun getServicos(): Call<List<Servico>>
 
     @POST("/servicos")
     fun postServico(@Query("novoServico") novoServico: Servico?): Call<Servico>

@@ -23,4 +23,5 @@
     <color name="yellow_ball">#FFD481</color>
     <color name="blue_ball">#05b0f0</color>
     <color name="green_whats">#67C94D</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

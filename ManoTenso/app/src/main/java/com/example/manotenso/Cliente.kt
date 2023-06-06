@@ -15,7 +15,7 @@ data class Cliente(
     val numero: Int? = null,
     val complemento: String? = null,
     val autenticado: Int? = null,
-    val urlFoto: String? = null,
+    var urlFoto: String? = null,
     val cartaApresentacao: String? = null
 ) {
     fun getEnderecoCompleto(): String {
