@@ -2,56 +2,46 @@ package com.example.manotenso
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.manotenso.adapter.PrestadorAdapter
-import com.example.manotenso.databinding.FragmentHomeClienteBinding
+import com.example.manotenso.adapter.ClienteAdapter
+import com.example.manotenso.databinding.FragmentHomePrestadorBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class HomePrestador : Fragment() {
-    lateinit var prestadorAdapter: PrestadorAdapter
+
+    lateinit var clienteAdapter: ClienteAdapter
 
     private val binding by lazy {
-        FragmentHomeClienteBinding.inflate(layoutInflater)
+        FragmentHomePrestadorBinding.inflate(layoutInflater)
     }
 
-    private val getPrestadores by lazy {
-        Apis.getApi().getPrestadores()
+    private val getCliente by lazy {
+        Apis.getApi().getClientes()
     }
 
-    private val getServicos by lazy {
-        Apis.getApi().getServicos()
-    }
-
-    lateinit var adapterItems: ArrayAdapter<String>
-
-    private var listaPrestador = mutableListOf<Prestador>()
-    private val listaPrestadorTodos = mutableListOf<Prestador>()
-    private val listaServicos = mutableListOf<Servico>()
+    private var listaCliente = mutableListOf<Cliente>()
 
     fun carregarListaApi() {
 
-        getPrestadores.enqueue(object : Callback<List<Prestador>> {
+        getCliente.enqueue(object : Callback<List<Cliente>> {
             override fun onResponse(
-                call: Call<List<Prestador>>,
-                response: Response<List<Prestador>>
+                call: Call<List<Cliente>>,
+                response: Response<List<Cliente>>
             ) {
                 if (response.isSuccessful && !response.body()!!.isNullOrEmpty()) {
-                    listaPrestadorTodos.addAll(response.body()!!)
-                    listaPrestador.addAll(listaPrestadorTodos)
-                    prestadorAdapter.notifyDataSetChanged()
+                    listaCliente.addAll(response.body()!!)
+                    clienteAdapter.notifyDataSetChanged()
                 }
             }
 
-            override fun onFailure(call: Call<List<Prestador>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Cliente>>, t: Throwable) {
                 t.printStackTrace()
                 Toast.makeText(
                     context,
@@ -61,39 +51,6 @@ class HomePrestador : Fragment() {
             }
 
         })
-
-
-        getServicos.enqueue(object : Callback<List<Servico>> {
-            override fun onResponse(
-                call: Call<List<Servico>>,
-                response: Response<List<Servico>>
-            ) {
-                if (response.isSuccessful && response.body()!!.isNotEmpty()) {
-                    var autoCompleteTxt = binding.autoCompleteTxt
-
-                    listaServicos.addAll(response.body()!!)
-                    adapterItems = ArrayAdapter(activity!!.baseContext, R.layout.list_item, response.body()!!.map { it.tipoServico })
-                    autoCompleteTxt.setAdapter(adapterItems)
-
-                    autoCompleteTxt.onItemClickListener =
-                        AdapterView.OnItemClickListener { parent, view, position, id ->
-
-                            listaPrestador.clear()
-
-                            listaPrestador.addAll(listaPrestadorTodos.filter {
-                                it.fkServico != null &&  it.fkServico!!.idTipoServico ==  listaServicos.get(position).idTipoServico})
-
-
-                            prestadorAdapter.notifyDataSetChanged()
-                        }
-                }
-            }
-
-            override fun onFailure(call: Call<List<Servico>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        });
     }
 
     override fun onCreateView(
@@ -104,20 +61,19 @@ class HomePrestador : Fragment() {
         return binding.root
     }
 
-    private fun buscarPrestadorPorId(id: Int): Prestador? {
-        return listaPrestador.find { prestador -> prestador.id == id }
+    private fun buscarClientePorId(id: Int): Cliente? {
+        return listaCliente.find { cliente -> cliente.idCliente == id }
     }
 
 
     // pode jogar pra uma tela
     fun exibeToast(id: Int) {
-        val prestador = buscarPrestadorPorId(id)
-        if (prestador != null) {
+        val cliente = buscarClientePorId(id)
+        if (cliente != null) {
             val tela = Intent(context, Profile::class.java)
-            tela.putExtra("prestadorNome", prestador.nome)
-            tela.putExtra("prestadorDescricao", prestador.cartaApresentacao)
-            tela.putExtra("prestadorFoto", prestador.urlFoto)
-            tela.putExtra("prestadorLinkWhatsapp", prestador.linkWhatsapp)
+            tela.putExtra("prestadorNome", cliente.nome)
+            tela.putExtra("prestadorDescricao", cliente.cartaApresentacao)
+            tela.putExtra("prestadorFoto", cliente.urlFoto)
             startActivity(tela)
         }
     }
@@ -125,21 +81,21 @@ class HomePrestador : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val prestadorRV = binding.rvPrestador
+        val clienteRV = binding.rvCliente
 
-        prestadorAdapter = PrestadorAdapter(listaPrestador) {
+        clienteAdapter = ClienteAdapter(listaCliente) {
                 mensagem -> exibeToast(mensagem)
         }
-        prestadorAdapter.distanciaService = Apis.getDistanceMatrix()
+        clienteAdapter.distanciaService = Apis.getDistanceMatrix()
 
         val layoutManager = LinearLayoutManager(view.context)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
-        prestadorRV.layoutManager = layoutManager
-        prestadorRV.adapter = prestadorAdapter
+        clienteRV.layoutManager = layoutManager
+        clienteRV.adapter = clienteAdapter
 
         carregarListaApi()
 
-        prestadorAdapter.notifyDataSetChanged()
-        prestadorRV.itemAnimator = null
+        clienteAdapter.notifyDataSetChanged()
+        clienteRV.itemAnimator = null
     }
 }

@@ -12,7 +12,7 @@ class CadastroClienteConcluido : AppCompatActivity() {
     }
 
     fun homeCliente(componente: View) {
-        val tela = Intent(applicationContext, HomeCliente::class.java)
+        val tela = Intent(applicationContext, Home::class.java)
         startActivity(tela)
     }
 }

@@ -156,9 +156,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/logradouro"
+                    android:text="@string/rua"
                     android:layout_below="@id/et_bairro"
-                    android:id="@+id/tv_logradouro"
+                    android:id="@+id/tv_rua"
                     android:layout_marginTop="19dp"
                     android:layout_marginLeft="46dp"
                     android:fontFamily="@font/montserrat"
@@ -169,8 +169,8 @@
                 <EditText
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_logradouro"
-                    android:id="@+id/et_logradouro"
+                    android:layout_below="@id/tv_rua"
+                    android:id="@+id/et_rua"
                     android:layout_marginLeft="36dp"
                     />
 
@@ -178,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/numero"
-                    android:layout_below="@id/et_logradouro"
+                    android:layout_below="@id/et_rua"
                     android:id="@+id/tv_numero"
                     android:layout_marginTop="19dp"
                     android:layout_marginLeft="46dp"

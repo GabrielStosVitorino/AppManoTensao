@@ -2,22 +2,22 @@ package com.example.manotenso
 
 data class Cliente(
 
-    val idCliente: Int? = null,
     var nome: String? = null,
-    val email: String?,
-    val senha: String?,
-    val telefone: String? = null,
-    val cpf: String? = null,
-    val dtNascimento: String? = null,
-    val cep: String? = null,
-    val bairro: String? = null,
-    val rua: String? = null,
-    val numero: Int? = null,
-    val complemento: String? = null,
-    val autenticado: Int? = null,
+    var email: String? = null,
+    var senha: String? = null,
+    var telefone: String? = null,
+    var cpf: String? = null,
+    var dtNascimento: String? = null,
+    var cep: String? = null,
+    var bairro: String? = null,
+    var rua: String? = null,
+    var numero: Int? = null,
+    var complemento: String? = null,
+    var autenticado: Int? = null,
     var urlFoto: String? = null,
-    val cartaApresentacao: String? = null
-) {
+    var cartaApresentacao: String? = null,
+    var idCliente: Int? = null
+): java.io.Serializable {
     fun getEnderecoCompleto(): String {
         return "$rua $numero $bairro"
     }

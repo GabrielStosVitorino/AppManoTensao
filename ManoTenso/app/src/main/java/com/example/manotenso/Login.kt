@@ -91,6 +91,8 @@ class Login : AppCompatActivity() {
             saveConsentStatus(true)
             if (!checkBox) {
                 val chamada = api.loginCliente(email, senha)
+                println(email)
+                println(senha)
 
                 chamada.enqueue(object : Callback<Cliente> {
 
@@ -100,7 +102,6 @@ class Login : AppCompatActivity() {
                             SessaoUsuario.cliente = resposta
                             val telaLoginCliente = Intent(applicationContext, Home::class.java)
                             startActivity(telaLoginCliente)
-                            finish()
                         } else {
                             println("segundo else cliente")
                             println(resposta)

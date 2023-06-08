@@ -34,7 +34,7 @@
     <string name="telefone">Telefone</string>
     <string name="cep">CEP</string>
     <string name="bairro">Bairro</string>
-    <string name="logradouro">Logradouro</string>
+    <string name="rua">Rua</string>
     <string name="numero">Número</string>
     <string name="complemento">Complemento</string>
     <string name="que_bom">Que bom te ter com a gente!</string>
@@ -51,6 +51,7 @@
     <string name="envie_sem">  Envie mensagens sem cobrança</string>
     <string name="doze_propostas">  Obtenha até 12 propostas</string>
     <string name="assinar">Assinar</string>
+    <string name="sair">Sair</string>
     <string name="premium">PLANO PREMIUM</string>
     <string name="cento_e_nove">R$109,99</string>
     <string name="templete">  Template de orçamento</string>

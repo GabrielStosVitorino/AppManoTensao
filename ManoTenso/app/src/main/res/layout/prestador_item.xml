@@ -26,35 +26,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_name"
             android:text="Suzana"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:fontFamily="@font/montserrat"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:layout_toRightOf="@+id/iv_prestador"
             android:layout_marginLeft="13dp"/>
-
-        <ImageView
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:id="@+id/iv_star"
-            android:src="@drawable/baseline_star"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/iv_prestador"
-            android:layout_below="@+id/tv_name"
-            android:layout_marginLeft="13dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_avaliacao"
-            android:text="4.93"
-            android:textSize="13sp"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/black"
-            android:layout_marginTop="1dp"
-            android:layout_toRightOf="@+id/iv_star"
-            android:layout_marginLeft="4dp"
-            android:layout_below="@+id/tv_name"/>
 
         <ImageView
             android:layout_width="12dp"
@@ -63,7 +40,7 @@
             android:src="@drawable/baseline_location"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/iv_prestador"
-            android:layout_below="@+id/iv_star"
+            android:layout_below="@+id/tv_name"
             android:layout_marginLeft="13dp"/>
 
         <TextView
@@ -72,31 +49,21 @@
             android:id="@+id/tv_location"
             android:text="1.12km"
             android:fontFamily="@font/montserrat"
+            android:layout_marginTop="6dp"
             android:textSize="13sp"
             android:textColor="@color/black"
-            android:layout_toRightOf="@+id/iv_star"
+            android:layout_toRightOf="@+id/iv_location"
             android:layout_marginLeft="4dp"
-            android:layout_below="@+id/tv_avaliacao"/>
+            android:layout_below="@+id/tv_name"/>
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:id="@+id/iv_pintura"
-            android:layout_marginTop="23dp"
-            android:layout_toRightOf="@+id/iv_prestador"
+            android:src="@drawable/arrowback"
             android:layout_below="@+id/tv_location"
-            android:src="@drawable/pincel"
-            android:layout_marginLeft="13dp"/>
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/iv_eletrica"
-            android:layout_marginTop="23dp"
-            android:layout_toRightOf="@+id/iv_pintura"
-            android:layout_below="@+id/tv_location"
-            android:src="@drawable/eletrica"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginLeft="330dp"
+            android:layout_marginTop="10dp"
+            android:rotation="180"/>
 
     </RelativeLayout>
 

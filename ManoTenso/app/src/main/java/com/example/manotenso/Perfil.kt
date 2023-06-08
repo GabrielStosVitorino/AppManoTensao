@@ -1,6 +1,7 @@
 package com.example.manotenso
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -28,9 +29,11 @@ import java.util.*
 
 class Perfil : Fragment() {
 
+    private lateinit var api: Api
     lateinit var cliente: Cliente
     private val REQUEST_IMAGE_GALLERY = 101
     private val REQUEST_IMAGE_CAMERA = 102
+    private var listaCliente = mutableListOf<Cliente>()
 
     private val binding by lazy {
         FragmentPerfilBinding.inflate(layoutInflater)
@@ -38,6 +41,10 @@ class Perfil : Fragment() {
 
     private val retrofit by lazy {
         Apis.getApi().getClientes()
+    }
+
+    object AuthManager {
+        var userId: Int? = null
     }
 
     override fun onCreateView(
@@ -53,25 +60,43 @@ class Perfil : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         obterDadosUsuario()
         setupListeners()
+
+        api = Apis.getApi()
+
+        // Configurar o clique do botão de logoff
+        val btnLogoff = binding.btnLogoff
+        btnLogoff.setOnClickListener {
+            fazerLogoff()
+        }
+    }
+
+    private fun buscarPrestadorPorId(id: Int): Cliente? {
+        return listaCliente.find { cliente -> cliente.idCliente == id }
     }
 
     private fun obterDadosUsuario() {
-        retrofit.enqueue(object : Callback<List<Cliente>> {
-            override fun onResponse(
-                call: Call<List<Cliente>>,
-                response: Response<List<Cliente>>
-            ) {
+        val api = Apis.getApi()
+        val email = SessaoUsuario.cliente?.email
+        val senha = SessaoUsuario.cliente?.senha
+        val call = api.loginCliente(email!!, senha!!)
+
+        call.enqueue(object : Callback<Cliente> {
+            override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
                 if (response.isSuccessful) {
-                    val clientes = response.body()
-                    if (!clientes.isNullOrEmpty()) {
-                        val cliente = clientes[0]
-                        this@Perfil.cliente = cliente
+                    val cliente = response.body()
+                    // Salve o objeto cliente em SessaoUsuario ou em algum outro local adequado
+                    SessaoUsuario.cliente = cliente
+
+                    // Atualize a interface do usuário com os dados do cliente
+                    if (cliente != null) {
                         exibirInformacoesPerfil(cliente)
                     }
+                } else {
+                    // Handle error response
                 }
             }
 
-            override fun onFailure(call: Call<List<Cliente>>, t: Throwable) {
+            override fun onFailure(call: Call<Cliente>, t: Throwable) {
                 t.printStackTrace()
                 Toast.makeText(
                     context,
@@ -96,6 +121,12 @@ class Perfil : Fragment() {
 
         Picasso.get().load(urlFoto).into(fotoPrestador)
     }
+
+    private fun recuperarIdClienteLogado(): String {
+        val sharedPreferences = context?.getSharedPreferences("NomeDoSharedPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences?.getString("idUsuarioLogado", "") ?: ""
+    }
+
 
     private fun setupListeners() {
         binding.btnFoto.setOnClickListener {
@@ -150,5 +181,50 @@ class Perfil : Fragment() {
         Picasso.get()
             .load(imageUri)
             .into(binding.ivPhoto)
+    }
+
+    private fun fazerLogoff() {
+        val email = SessaoUsuario.cliente?.email
+        val senha = SessaoUsuario.cliente?.senha
+        val call = api.loginCliente(email!!, senha!!)
+
+        call.enqueue(object : Callback<Cliente> {
+            override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
+                if (response.isSuccessful) {
+                    val cliente = response.body()
+                    if (cliente != null) {
+                        val idCliente = cliente.idCliente
+                        logoffCliente(idCliente!!)
+                    } else {
+                        // Falha ao obter dados do cliente
+                    }
+                } else {
+                    // Logoff falhou
+                }
+            }
+
+            override fun onFailure(call: Call<Cliente>, t: Throwable) {
+                // Erro de conexão ou falha na requisição
+            }
+        })
+    }
+
+    private fun logoffCliente(idCliente: Int) {
+        val call = api.logoffCliente(idCliente)
+
+        call.enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    // Logoff bem-sucedido
+                    // Faça ações adicionais, como redirecionar para a tela de login
+                } else {
+                    // Logoff falhou
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                // Erro de conexão ou falha na requisição
+            }
+        })
     }
 }

@@ -51,6 +51,7 @@
                     android:textSize="15sp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="131dp"
+                    android:onClick="foto"
                     />
 
                 <androidx.appcompat.widget.AppCompatButton

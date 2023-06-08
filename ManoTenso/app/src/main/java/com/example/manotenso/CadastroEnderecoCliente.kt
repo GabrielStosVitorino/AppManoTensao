@@ -18,17 +18,17 @@ class CadastroEnderecoCliente : AppCompatActivity() {
     }
 
     fun cadastrarCliente(componente: View){
-        val dadosCliente = intent.getSerializableExtra("dadosCliente") as DadosCliente
+        val dadosCliente = intent.getSerializableExtra("dadosCliente") as Cliente
 
         val cep = findViewById<EditText>(R.id.et_cep).text.toString()
         val bairro = findViewById<EditText>(R.id.et_bairro).text.toString()
-        val logradouro = findViewById<EditText>(R.id.et_logradouro).text.toString()
+        val rua = findViewById<EditText>(R.id.et_rua).text.toString()
         val numero = findViewById<EditText>(R.id.et_numero).text.toString().toInt()
         val complemento = findViewById<EditText>(R.id.et_complemento).text.toString()
 
         dadosCliente.cep = cep
         dadosCliente.bairro = bairro
-        dadosCliente.logradouro = logradouro
+        dadosCliente.rua = rua
         dadosCliente.numero = numero
         dadosCliente.complemento = complemento
 
@@ -40,7 +40,7 @@ class CadastroEnderecoCliente : AppCompatActivity() {
                 val resposta = response.body()
                 if (resposta != null) {
                     SessaoUsuario.cliente = resposta
-                    val tela = Intent(applicationContext, CadastroClienteConcluido::class.java)
+                    val tela = Intent(applicationContext, Home::class.java)
                     startActivity(tela)
                 } else {
                     println("Segundo else cliente")

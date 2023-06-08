@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_insert_photo_24"
-                android:layout_marginTop="24dp"
+                android:layout_alignTop="@+id/iv_photo"
                 android:layout_marginLeft="350dp"
                 android:backgroundTint="@color/transparent"
                 android:onClick="alterar"
@@ -97,9 +97,22 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat augue non justo varius, non aliquam mauris molestie. In eget facilisis dolor. Nam efficitur ex at urna accumsan, vel maximus velit blandit. Suspendisse ornare mattis pharetra. Nunc commodo ex in massa faucibus, ut rhoncus leo faucibus. Pellentesque aliquam lorem ut ante molestie varius."
                 android:textColor="@color/black"
                 android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_logoff"
+                android:layout_width="135dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_descricao"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="57dp"
+                android:background="@drawable/custom_buttom_enter"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/sair"
+                android:textFontWeight="700"
+                android:textSize="14sp"
+                android:onClick="logoff"/>
 
         </RelativeLayout>
     </ScrollView>

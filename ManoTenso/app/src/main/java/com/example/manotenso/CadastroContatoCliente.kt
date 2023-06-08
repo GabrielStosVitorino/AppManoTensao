@@ -17,7 +17,7 @@ class CadastroContatoCliente : AppCompatActivity() {
     }
 
     fun cadastroEndereco(componente: View){
-        val dadosCliente = intent.getSerializableExtra("dadosCliente") as DadosCliente
+        val dadosCliente = intent.getSerializableExtra("dadosCliente") as Cliente
 
         val email = findViewById<EditText>(R.id.et_email).text.toString()
         val telefone = findViewById<EditText>(R.id.et_telefone).text.toString()
@@ -25,7 +25,7 @@ class CadastroContatoCliente : AppCompatActivity() {
         dadosCliente.email = email
         dadosCliente.telefone = telefone
 
-        val tela = Intent(applicationContext, CadastroClienteConcluido::class.java)
+        val tela = Intent(applicationContext, CadastroEnderecoCliente::class.java)
 
         tela.putExtra("dadosCliente", dadosCliente)
         startActivity(tela)
